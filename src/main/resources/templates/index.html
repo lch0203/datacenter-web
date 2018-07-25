@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>云南开放大学数据中心</title>
+
+    <link rel="icon" class="fa fa-windows fa-fw" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ECharts -->
+    <script src="/Echart3/dist/echarts.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .app-footer {
+            min-height: 50px;
+            padding: 0 1rem;
+            text-align: center;
+            line-height: 50px;
+            color: #263238;
+            background: #f8f8f8;
+            border-top: 1px solid #cfd8dc;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <div th:replace="common :: navbar"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">云南开放大学数据中心</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">1</div>
+                                <div>云南开放大学门户</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="http://ynou.cn">
+                        <div class="panel-footer">
+                            <span class="pull-left">点击进入....</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">2</div>
+                                <div>资产管理系统</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="http://zcgl.ynou.edu.cn/pt/">
+                        <div class="panel-footer">
+                            <span class="pull-left">点击进入....</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">3</div>
+                                <div>综合信息服务平台</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="http://teach.ynou.cn/">
+                        <div class="panel-footer">
+                            <span class="pull-left">点击进入....</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-support fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">4</div>
+                                <div>成教学院-教务管理系统</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="http://192.168.141.16/">
+                        <div class="panel-footer">
+                            <span class="pull-left">点击进入....</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> 2012 - 2018 在册学生数
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="zc-student-area-chart" style="height: 400px;width: auto"></div>
+                        <!--<div id="grad-student-area-chart" style="width: 600px;height:400px;"></div>-->
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="info">
+                                        <th>#</th>
+                                        <th>2012</th>
+                                        <th>2013</th>
+                                        <th>2014</th>
+                                        <th>2015</th>
+                                        <th>2016</th>
+                                        <th>2017</th>
+                                        <th>2018</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>开放本科</td> <!--[2, 3, 559, 1187, 1743, 2218, 2081]-->
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>559</td>
+                                        <td>1187</td>
+                                        <td>1743</td>
+                                        <td>2218</td>
+                                        <td>2081</td>
+                                    </tr>
+                                    <tr>
+                                        <td>开放专科</td> <!--[28286, 48655, 67934, 90281, 123587, 148756, 144617]-->
+                                        <td>28286</td>
+                                        <td>48655</td>
+                                        <td>67934</td>
+                                        <td>90281</td>
+                                        <td>123587</td>
+                                        <td>148756</td>
+                                        <td>144617</td>
+                                    </tr>
+                                    <tr>
+                                        <td>开放专升本</td> <!--[0, 0, 158, 215, 262, 558, 607]-->
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>158</td>
+                                        <td>215</td>
+                                        <td>262</td>
+                                        <td>558</td>
+                                        <td>607</td>
+                                    </tr>
+                                    <tr>
+                                        <td>高职</td> <!--[7801, 7631, 7311, 7696, 8082, 9657, 6743]-->
+                                        <td>7801</td>
+                                        <td>7631</td>
+                                        <td>7311</td>
+                                        <td>7696</td>
+                                        <td>8082</td>
+                                        <td>9657</td>
+                                        <td>6743</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- /.table-responsive -->
+                            </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> 2012 - 2018 新注册学生数
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="new-student-area-chart" style="height: 400px;width: auto"></div>
+                        <!--<div id="grad-student-area-chart" style="width: 600px;height:400px;"></div>-->
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="warning">
+                                        <th>#</th>
+                                        <th>2012</th>
+                                        <th>2013</th>
+                                        <th>2014</th>
+                                        <th>2015</th>
+                                        <th>2016</th>
+                                        <th>2017</th>
+                                        <th>2018</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>开放本科</td> <!-- [2, 1, 556, 628, 556, 475, 0]-->
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>556</td>
+                                        <td>628</td>
+                                        <td>556</td>
+                                        <td>475</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>开放专科</td> <!--[28286, 20369, 19279, 25085, 39888, 39144, 5642]-->
+                                        <td>28286</td>
+                                        <td>20369</td>
+                                        <td>19279</td>
+                                        <td>25085</td>
+                                        <td>39888</td>
+                                        <td>39144</td>
+                                        <td>5642</td>
+                                    </tr>
+                                    <tr>
+                                        <td>开放专升本</td> <!--[0, 0, 158, 57, 47, 374, 70]-->
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>158</td>
+                                        <td>57</td>
+                                        <td>47</td>
+                                        <td>374</td>
+                                        <td>70</td>
+                                    </tr>
+                                    <tr>
+                                        <td>高职</td> <!--[2529, 2380, 2402, 2914, 2766, 3977, 0]-->
+                                        <td>2529</td>
+                                        <td>2380</td>
+                                        <td>2402</td>
+                                        <td>2914</td>
+                                        <td>2766</td>
+                                        <td>3977</td>
+                                        <td>0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- /.table-responsive -->
+                            </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> 2012 - 2018 毕业学生数
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="grad-student-area-chart" style="height: 400px;width: auto"></div>
+                        <!--<div id="grad-student-area-chart" style="width: 600px;height:400px;"></div>-->
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="danger">
+                                        <th>#</th>
+                                        <th>2012</th>
+                                        <th>2013</th>
+                                        <th>2014</th>
+                                        <th>2015</th>
+                                        <th>2016</th>
+                                        <th>2017</th>
+                                        <th>2018</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>开放本科</td> <!--0, 0, 0, 0, 0, 0, 137-->
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>137</td>
+                                    </tr>
+                                    <tr>
+                                        <td>开放专科</td> <!--[0, 0, 0, 2738, 6582, 13975, 9781]-->
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>2738</td>
+                                        <td>6582</td>
+                                        <td>13975</td>
+                                        <td>9781</td>
+                                    </tr>
+                                    <tr>
+                                        <td>开放专升本</td> <!--[0, 0, 0, 0, 0, 78, 21]-->
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>78</td>
+                                        <td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>高职</td> <!--[2323, 2550, 2722, 2529, 2380, 2402, 2914]-->
+                                        <td>2323</td>
+                                        <td>2550</td>
+                                        <td>2722</td>
+                                        <td>2529</td>
+                                        <td>2380</td>
+                                        <td>2402</td>
+                                        <td>2914</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- /.table-responsive -->
+                            </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+
+                </div>
+                <!-- /.panel -->
+
+            </div>
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-adjust fa-fw"></i> 2018年各类在册学生占比
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="zc_2018_data" style="height:300px;width: auto"></div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-adjust fa-fw"></i> 2017年各类在册学生占比
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="zc_2017_data" style="height:300px;width: auto"></div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-adjust fa-fw"></i> 2016年各类在册学生占比
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="zc_2016_data" style="height:300px;width: auto"></div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+
+</div>
+<!-- /#wrapper -->
+
+<!--</footer>-->
+<div th:replace="common :: footer"></div>
+
+<!-- jQuery -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+<!--&lt;!&ndash; Morris Charts JavaScript &ndash;&gt;-->
+<!--<script src="/vendor/raphael/raphael.min.js"></script>-->
+<!--<script src="/vendor/morrisjs/morris.min.js"></script>-->
+<!--<script src="/data/morris-data.js"></script>-->
+
+<!--Echart3 data-->
+<script src="/data/grad-student-data.js"></script>
+<script src="/data/zc-student-data.js"></script>
+<script src="/data/new-student-data.js"></script>
+<script src="/data/2018-zc-student-data.js"></script>
+<script src="/data/2017-zc-student-data.js"></script>
+<script src="/data/2016-zc-student-data.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

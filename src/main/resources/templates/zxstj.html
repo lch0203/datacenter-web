@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>云南开放大学数据中心</title>
+
+    <link rel="icon" class="fa fa-windows fa-fw" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ECharts -->
+    <script src="/Echart3/dist/echarts.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .app-footer {
+            min-height: 50px;
+            padding: 0 1rem;
+            text-align: center;
+            line-height: 50px;
+            color: #263238;
+            background: #f8f8f8;
+            border-top: 1px solid #cfd8dc;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <div th:replace="common :: navbar"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">2012年-2017年各类型在校生数、毕业生数统计</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> 云南开放大学2012年-2017年各类型在校生数、毕业生数统计表
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="info text-center">
+                                        <th style="vertical-align: middle;text-align: center" colspan=2 rowspan=2></th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2012年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2013年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2014年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2015年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2016年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2017年</th>
+                                    </tr>
+                                    <tr class="info text-center">
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                    </tr>
+                                    </thead>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" rowspan=2>开放教育</td>
+                                        <td style="vertical-align: middle">国开大</td>
+                                        <td style="vertical-align: middle">47804人</td>
+                                        <td style="vertical-align: middle">8516人</td>
+                                        <td style="vertical-align: middle">49135人</td>
+                                        <td style="vertical-align: middle">9805人</td>
+                                        <td style="vertical-align: middle">46876人</td>
+                                        <td style="vertical-align: middle">10075人</td>
+                                        <td style="vertical-align: middle">43888人</td>
+                                        <td style="vertical-align: middle">9059人</td>
+                                        <td style="vertical-align: middle">39494人</td>
+                                        <td style="vertical-align: middle">9558人</td>
+                                        <td style="vertical-align: middle">35958人</font></td>
+                                        <td style="vertical-align: middle">7953人</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle">云开大</td>
+                                        <td style="vertical-align: middle">27713人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">44299人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">60898人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">81389人</td>
+                                        <td style="vertical-align: middle">2738人</font></td>
+                                        <td style="vertical-align: middle">114914人</td>
+                                        <td style="vertical-align: middle">6690人</font></td>
+                                        <td style="vertical-align: middle">104529人</font></td>
+                                        <td style="vertical-align: middle">13910人</font></td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" colspan=2>国职院高职教育</td>
+                                        <td style="vertical-align: middle">7709人</td>
+                                        <td style="vertical-align: middle">2268人</td>
+                                        <td style="vertical-align: middle">7550人</td>
+                                        <td style="vertical-align: middle">2500人（含2名留学生）</td>
+                                        <td style="vertical-align: middle">7226人</td>
+                                        <td style="vertical-align: middle">2678人（含9名留学生）</td>
+                                        <td style="vertical-align: middle">7574人</td>
+                                        <td style="vertical-align: middle">2491人</td>
+                                        <td style="vertical-align: middle">7927人</td>
+                                        <td style="vertical-align: middle">2322人（含3名留学生）</td>
+                                        <td style="vertical-align: middle">9499人（含19名留学生）</td>
+                                        <td style="vertical-align: middle">2299人（含1名留学生）</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" rowspan=2>成人教育</td>
+                                        <td style="vertical-align: middle">云开大</td>
+                                        <td style="vertical-align: middle">4170人</td>
+                                        <td style="vertical-align: middle">885人</td>
+                                        <td style="vertical-align: middle">5042人</td>
+                                        <td style="vertical-align: middle">1623人</td>
+                                        <td style="vertical-align: middle">5720人</td>
+                                        <td style="vertical-align: middle">2131人</td>
+                                        <td style="vertical-align: middle">6821人</td>
+                                        <td style="vertical-align: middle">2403人</td>
+                                        <td style="vertical-align: middle">6788人</td>
+                                        <td style="vertical-align: middle">2964人</td>
+                                        <td style="vertical-align: middle">5893人</td>
+                                        <td style="vertical-align: middle">3577人</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle">国职院</td>
+                                        <td style="vertical-align: middle">475人</td>
+                                        <td style="vertical-align: middle">241人</td>
+                                        <td style="vertical-align: middle">443人</td>
+                                        <td style="vertical-align: middle">65人</td>
+                                        <td style="vertical-align: middle">295人</td>
+                                        <td style="vertical-align: middle">148人</td>
+                                        <td style="vertical-align: middle">164人</td>
+                                        <td style="vertical-align: middle">139人</td>
+                                        <td style="vertical-align: middle">164人</td>
+                                        <td style="vertical-align: middle">156人</td>
+                                        <td style="vertical-align: middle">8人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" colspan=2>国职院五年制高职</td>
+                                        <td style="vertical-align: middle">1501人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">2211人(高段315）</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">2283人（高段785）</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">2280人（高段782）</td>
+                                        <td style="vertical-align: middle">299人</td>
+                                        <td style="vertical-align: middle">2127人（高段1047）</td>
+                                        <td style="vertical-align: middle">463人</td>
+                                        <td style="vertical-align: middle">2010人（高段1196）</td>
+                                        <td style="vertical-align: middle">564人</td>
+                                    </tr>
+                                </table>
+
+                                <!-- /.table-responsive -->
+                            </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+
+</div>
+<!-- /#wrapper -->
+
+<!--</footer>-->
+<div th:replace="common :: footer"></div>
+
+<!-- jQuery -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+<!--&lt;!&ndash; Morris Charts JavaScript &ndash;&gt;-->
+<!--<script src="/vendor/raphael/raphael.min.js"></script>-->
+<!--<script src="/vendor/morrisjs/morris.min.js"></script>-->
+<!--<script src="/data/morris-data.js"></script>-->
+
+<!--Echart3 data-->
+<!--<script src="/data/grad-student-data.js"></script>-->
+<!--<script src="/data/zc-student-data.js"></script>-->
+<!--<script src="/data/new-student-data.js"></script>-->
+<!--<script src="/data/2018-zc-student-data.js"></script>-->
+<!--<script src="/data/2017-zc-student-data.js"></script>-->
+<!--<script src="/data/2016-zc-student-data.js"></script>-->
+
+<!-- Custom Theme JavaScript -->
+<script src="/dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.141.17:3306/sso
+    username: root
+    password: ynou#321
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+cas:
+  login:
+    url: http://192.168.141.17:8080/cas/login
+    prefix: http://192.168.141.17:8080/cas
+app:
+  server:
+    name: http://172.18.21.29
+
+

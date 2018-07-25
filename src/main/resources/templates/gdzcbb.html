@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>云南开放大学固定资产报表数据</title>
+
+    <link rel="icon" class="fa fa-windows fa-fw" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ECharts -->
+    <script src="/Echart3/dist/echarts.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .app-footer {
+            min-height: 50px;
+            padding: 0 1rem;
+            text-align: center;
+            line-height: 50px;
+            color: #263238;
+            background: #f8f8f8;
+            border-top: 1px solid #cfd8dc;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <div th:replace="common :: navbar"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">云南开放大学固定资产报表数据</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> 固定资产分类汇总表
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <!--表格数据-->
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <!--<caption style="text-align:center;"><h3>云南开放大学固定资产分类汇总表</h3></caption>-->
+                                    <caption>统计范围:2018年01月01日至2018年07月01日&nbsp;&nbsp;单位（元）</caption>
+                                    <thead>
+                                    <tr class="info">
+                                        <th rowspan="2" style="text-align: center;vertical-align: middle">分类号</th>
+                                        <th rowspan="2" style="text-align: center;vertical-align: middle">摘要/资产名称</th>
+                                        <th colspan="2" style="text-align: center">期初</th>
+                                        <th colspan="2" style="text-align: center">增加</th>
+                                        <th colspan="2" style="text-align: center">减少</th>
+                                        <th colspan="2" style="text-align: center">结存</th>
+                                    </tr>
+                                    <tr class="info">
+                                        <th style="text-align: center">数量</th>
+                                        <th style="text-align: center">金额</th>
+                                        <th style="text-align: center">数量</th>
+                                        <th style="text-align: center">金额</th>
+                                        <th style="text-align: center">数量</th>
+                                        <th style="text-align: center">金额</th>
+                                        <th style="text-align: center">数量</th>
+                                        <th style="text-align: center">金额</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>土地、房屋及构筑物</td>
+                                        <td>130</td>
+                                        <td>675,771,311.99</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>54</td>
+                                        <td>51,848,473.14</td>
+                                        <td>76</td>
+                                        <td>623,922,838.85</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>通用设备</td>
+                                        <td>11074</td>
+                                        <td>168,339,560.26</td>
+                                        <td>1099</td>
+                                        <td>8,541,309.61</td>
+                                        <td>1</td>
+                                        <td>6,700.00</td>
+                                        <td>12162</td>
+                                        <td>176,874,169.87</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>专用设备</td>
+                                        <td>1486</td>
+                                        <td>41,107,342.89</td>
+                                        <td>9</td>
+                                        <td>67,731.10</td>
+                                        <td>1</td>
+                                        <td>290,318.51</td>
+                                        <td>1494</td>
+                                        <td>40,884,755.48</td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>文物和陈列品</td>
+                                        <td>37</td>
+                                        <td>3,335,842.00</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>37</td>
+                                        <td>3,335,842.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>图书、档案</td>
+                                        <td>150</td>
+                                        <td>14,981,114.50</td>
+                                        <td>3</td>
+                                        <td>98,000.00</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>153</td>
+                                        <td>15,079,114.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>06</td>
+                                        <td>家具、用具、装具及动植物</td>
+                                        <td>25337</td>
+                                        <td>26,650,154.44</td>
+                                        <td>362</td>
+                                        <td>362,383.49</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>25699</td>
+                                        <td>27,012,537.93</td>
+                                    </tr>
+                                    <tr>
+                                        <td>07</td>
+                                        <td>无形资产</td>
+                                        <td>14</td>
+                                        <td>4,939,300.00</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>14</td>
+                                        <td>4,939,300.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>合计</td>
+                                        <td>合计</td>
+                                        <td>38228</td>
+                                        <td>935,124,626.08</td>
+                                        <td>1463</td>
+                                        <td>9,069,424.20</td>
+                                        <td>56</td>
+                                        <td>52,145,491.65</td>
+                                        <td>39635</td>
+                                        <td>892,048,558.63</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                <p>汇总级次:1；选择大类：00（固定资产分类（六大类））；制表性质:全部；经费科目: 全部；记账类型:全部；包含下级:是；包含备查账户:否；</p>
+
+                                <!-- /.table-responsive -->
+                            </div>
+                        </div>
+                        <hr style="width: 100%">
+                        <div id="gdzc-final-chart" style="height: 390px;width: auto"></div>
+                        <!--<div id="grad-student-area-chart" style="width: 600px;height:400px;"></div>-->
+                        <!-- /.panel-body -->
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-adjust fa-fw"></i> 固定资产分类期初数(2018年1月1日)
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="gdzc_data_qc" style="height:400px;width: auto"></div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-adjust fa-fw"></i> 固定资产分类期结存(2018年7月1日)
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="gdzc_data_qm" style="height:400px;width: auto"></div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-list fa-fw"></i>按部门分类汇总表
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <caption>统计时间: <span th:text="${date}"></span> &nbsp;&nbsp;<span style="color: #2e6da4">单位(元)</span>
+                                    </caption>
+                                    <thead>
+                                    <tr class="info">
+                                        <th style="text-align: center">部门名称</th>
+                                        <th style="text-align: center">数量</th>
+                                        <th style="text-align: center">汇总价值</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="DepartmentSubTotal:${DepartmentSubTotalList}">
+                                        <td th:text="${DepartmentSubTotal.getDepName()}"></td>
+                                        <td th:text="${DepartmentSubTotal.getCount()}"></td>
+                                        <td th:text="'￥'+ ${DepartmentSubTotal.getSumOfMoneyString()}"></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-list fa-fw"></i><span>按部门分类汇总-条形图</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="gdzc-dep-sum-total" style="height: 2093px;width: auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!--</footer>-->
+<div th:replace="common :: footer"></div>
+
+<!-- jQuery -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+<!--&lt;!&ndash; Morris Charts JavaScript &ndash;&gt;-->
+<!--<script src="/vendor/raphael/raphael.min.js"></script>-->
+<!--<script src="/vendor/morrisjs/morris.min.js"></script>-->
+<!--<script src="/data/morris-data.js"></script>-->
+
+<!--Echart3 data-->
+<!--<script src="/data/grad-student-data.js"></script>-->
+<!--<script src="/data/zc-student-data.js"></script>-->
+<!--<script src="/data/new-student-data.js"></script>-->
+<!--<script src="/data/2018-zc-student-data.js"></script>-->
+<!--<script src="/data/2017-zc-student-data.js"></script>-->
+<!--<script src="/data/2016-zc-student-data.js"></script>-->
+<script src="/data/gdzc-data-final.js"></script>
+<script src="/data/gdzc-data-qc.js"></script>
+<script src="/data/gdzc-data-qm.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/dist/js/sb-admin-2.js"></script>
+
+
+<script th:inline="javascript" type="text/javascript">
+    /*<![CDATA[*/
+    var dom = document.getElementById("gdzc-dep-sum-total");
+    var myChart_gdzc_dep_sum_total = echarts.init(dom);
+    var app = {};
+
+    var depList =[[${DepartmentSubTotalList}]];
+    var dataDep = new Array();
+    var dataDepAmount = new Array();
+    var dataSumTotal = new Array();
+    for(var i = 0;i<depList.length;i++){
+        dataDep.push(depList[i]['depName']);
+        dataDepAmount.push(depList[i]['count']);
+        dataSumTotal.push(depList[i]['sumOfMoney']);
+    }
+    dataDep = dataDep.reverse();
+    dataDepAmount =dataDepAmount.reverse();
+    dataSumTotal= dataSumTotal.reverse();
+
+    option = null;
+    app.title = '按部门汇总 - 条形图';
+
+    option = {
+        title: {
+            // text: '按部门汇总',
+            subtext:'汇总时间:'+ [[${date}]],
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['数量','汇总价值']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: dataDep
+        },
+        series: [
+            {
+                name: '数量',
+                type: 'bar',
+                data: dataDepAmount
+            },
+            {
+                name: '汇总价值',
+                type: 'bar',
+                data: dataSumTotal
+            }
+        ]
+    };
+    if (option && typeof option === "object") {
+        myChart_gdzc_dep_sum_total.setOption(option, true);
+    }
+    //浏览器大小改变时重置大小
+    window.addEventListener("resize", function () {
+        myChart_gdzc_dep_sum_total.resize();
+    });
+    /*]]>*/
+</script>
+
+</body>
+
+</html>

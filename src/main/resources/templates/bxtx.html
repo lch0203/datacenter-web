@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>办学体系</title>
+
+    <link rel="icon" class="fa fa-windows fa-fw" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ECharts -->
+    <script src="/Echart3/dist/echarts.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .app-footer {
+            min-height: 50px;
+            padding: 0 1rem;
+            text-align: center;
+            line-height: 50px;
+            color: #263238;
+            background: #f8f8f8;
+            border-top: 1px solid #cfd8dc;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <div th:replace="common :: navbar"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">办学体系</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-image fa-fw"></i><span>二级学院、教学点、学习中心分布</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="jxd_xxzx_fb" style="height: 600px;width: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-twitter fa-fw"></i><span>境外学习中心</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="jwxxzx" style="height: 613px;width: auto"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>马尔代夫</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th><img alt="马尔代夫" src="/img/mrdf.JPG" style="border-color: #008080"
+                                         width="150px"/></th>
+                                <th style="vertical-align: top">
+                                    马尔代夫境外学习中心设立在马尔代夫国立大学内部，以首都马累为中心同时辐射马尔代夫各地，招收对汉语学习有兴趣的学习者及想提高汉语教学水平的本土汉语教师，运用现代信息技术手段，利用文字教材、音像教材、计算机课件等多种媒体开展现代远程开放教育，构建了求学者不受时空限制、个性化、自主化的教学模式。
+                                </th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>孟加拉国</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th><img alt="孟加拉国" SRC="/img/mjlg.JPG" style="border-color: #008080"
+                                         width="150px"/></th>
+                                <th style="vertical-align: top">
+                                    “学习中心”设立了云南开放大学研制和设计的现代化的远程教育平台。其主要运用现代信息技术手段，利用文字教材、音像教材、计算机课件等多种媒体，与孟加拉当地教学模式和客观条件相结合，开展现代远程开放教育。构建了适应于孟加拉求学者不受时空限制、个性化、自主化的教学模式。
+                                </th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>斯里兰卡</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th><img alt="斯里兰卡" SRC="/img/sllk.JPG" style="border-color: #008080"
+                                         width="150px"/></th>
+                                <th style="vertical-align: top">
+                                    学习中心坐落于斯里兰卡首都科伦坡，被誉为“21世纪海上丝绸之路的南亚明珠”。在“一带一路”对外开放战略的推动下，中斯两国开展互利合作，经济文化交流日益频繁，在斯里兰卡的汉语学习需求也日益增长。
+                                </th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-image fa-fw"></i><span>办学点位置图</span>
+                    </div>
+                    <div class="panel-body" style="min-width:400px;height:600px">
+                        <iframe th:src="${mapUrlId2}" name="mainFrame" id="mainFrame" frameborder="0"
+                                style="width:100%;height: 100%;border:1px solid #096DA6" scrolling="auto">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!--</footer>-->
+<div th:replace="common :: footer"></div>
+
+
+<!-- jQuery -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+<!--&lt;!&ndash; Morris Charts JavaScript &ndash;&gt;-->
+<!--<script src="/vendor/raphael/raphael.min.js"></script>-->
+<!--<script src="/vendor/morrisjs/morris.min.js"></script>-->
+<!--<script src="/data/morris-data.js"></script>-->
+
+<!--Echart3 data-->
+<script type="text/javascript" src="/Echart3/map/js/province/yunnan.js"></script>
+<script type="text/javascript" src="/Echart3/map/js/world.js"></script>
+<script type="text/javascript">
+
+    var geoCoordMap = {
+        //本部
+        '云南开放大学本部': [102.73, 25.04],
+        //学习中心
+        '绿春学习中心': [102.42, 23.01],
+        '鲁甸学习中心': [103.54, 27.21],
+        '金平学习中心': [103.24, 22.77],
+        '丽江古城学习中心': [100.25, 26.86],
+        '盐津学习中心': [104.28, 28.08],
+        '永胜学习中心': [100.76, 26.71],
+        '玉龙学习中心': [100.23, 26.82],
+        '盈江学习中心': [97.93, 24.69],
+        '建水学习中心': [102.79, 23.64],
+        '昭阳区学习中心': [103.7, 27.32],
+        '永德学习中心': [99.25, 24.03],
+        '砚山干部在线学习中心': [104.35, 23.62],
+        '云南省终身教育宾川学习中心': [100.55, 25.82],
+        '富宁学习中心': [105.6, 23.62],
+        '绥江学习中心': [103.97, 28.58],
+        '宁蒗学习中心': [100.82, 27.29],
+        '文山学习中心': [104.24, 23.37],
+        '昌宁学习中心': [99.61, 24.82],
+        '腾冲学习中心': [98.51, 25.01],
+        '瑞丽学习中心': [97.83, 24],
+        '蒙自学习中心': [103.41, 23.36],
+        '武定学习中心': [102.36, 25.55],
+        '陇川学习中心': [97.96, 24.33],
+        //教学点
+        '云南广播电视大学直属分校': [102.73, 25.04],
+        '昆明市总工会分校': [102.73, 25.04],
+        '云南电大政法分校': [102.73, 25.04],
+        '昆明五华新联大职业教育培训中心': [102.73, 25.04],
+        '昆明广播电视大学': [102.73, 25.04],
+        '云南省交通高级技工学校': [102.44, 24.95],
+        '安宁市委党校': [102.44, 24.95],
+        '昆明东川区职业成人教育培训中心': [102.73, 25.04],
+        '富民县职业高级中学': [102.48, 25.21],
+        '禄劝县委党校': [102.45, 25.58],
+        '石林县电大工作站': [103.29, 24.77],
+        '嵩明县农广校': [103.03, 25.35],
+        '寻甸县教师进修学校': [103.25, 25.56],
+        '中共宜良县委党校': [103.12, 24.9],
+        '晋宁县教师进修学校': [102.58, 24.68],
+        '曲靖电大分校': [103.79, 25.51],
+        '曲靖工商职业技术学校': [103.79, 25.51],
+        '曲靖市麒麟区职业高级中学': [103.79, 25.51],
+        '曲靖财经学校': [103.79, 25.51],
+        '富源县农业广播电视大学': [104.24, 25.67],
+        '会泽县农业广播电视学校': [103.27, 26.41],
+        '罗平县农业广播电视学校': [104.3, 24.88],
+        '马龙县职业技术学校': [103.61, 25.41],
+        '云南广播电视大学宣威工作站': [104.09, 26.24],
+        '沾益县职业教育培训中心': [103.82, 25.6],
+        '玉溪电大分校': [102.52, 24.35],
+        '玉溪第二职业高级中学': [102.52, 24.35],
+        '新平县职业高级中学': [101.98, 24.06],
+        '通海县教师进修学校': [102.75, 24.09],
+        '江川教师进修学校': [102.73, 24.27],
+        '澄江县农广校': [102.91, 24.68],
+        '峨山县职业中学': [102.38, 24.16],
+        '元江县职业高级中学': [102, 23.5],
+        '华宁县职业高级中学': [102.93, 24.26],
+        '易门县职业高级中学诶': [102.15, 24.67],
+        '昭通电大分校': [103.7, 27.32],
+        '昭通市财贸学校': [103.7, 27.32],
+        '昭阳区工作站': [103.7, 27.32],
+        '昭通市巧家县电大工作站': [102.92, 26.9],
+        '昭通市鲁甸县工作站': [103.54, 27.21],
+        '水富县职业高级中学': [104.41, 28.62],
+        '昭通市绥江县工作站': [103.97, 28.58],
+        '威信县工作站': [105.05, 27.85],
+        '昭通市盐津县工作站': [104.28, 28.08],
+        '彝良县电大工作站': [104.06, 27.61],
+        '昭通市永善县工作站': [103.63, 28.22],
+        '镇雄县教师进修学校': [104.86, 27.42],
+        '大关县职业高级中学': [103.91, 27.74],
+        '楚雄电大分校': [101.54, 25.01],
+        '楚雄职业高级中学': [101.54, 25.01],
+        '大姚县职中教学点': [101.34, 25.73],
+        '禄丰县教学点': [102.08, 25.15],
+        '楚雄州牟定县职业高级中学教学点': [101.58, 25.32],
+        '南华职中教学点': [101.26, 25.21],
+        '楚雄州武定县委党校办学点': [102.36, 25.55],
+        '楚雄州永仁县委党校教学点': [101.7, 26.07],
+        '楚雄州元谋县委党校教学点': [101.85, 25.7],
+        '姚安县职业高级中学': [101.24, 25.4],
+        '红河分校': [103.41, 23.36],
+        '蒙自教师进修学校': [103.41, 23.36],
+        '红河州红河县教师进修学校': [102.42, 23.35],
+        '云南电大建水县农广校教学点': [102.79, 23.64],
+        '红河州建水县教师进修学校': [102.79, 23.64],
+        '金平县工作站': [103.24, 22.77],
+        '红河州绿春县教师进修学校': [102.42, 23.01],
+        '红河州石屏县教师进修学校': [102.48, 23.73],
+        '红河州元阳县工作站': [102.81, 23.17],
+        '个旧市第一职业高级中学': [102.43, 23.35],
+        '开远市职业高级中学': [103.23, 23.7],
+        '泸西县职业技术教育中心': [103.76, 24.52],
+        '弥勒县民族职业高级中学': [103.43, 24.41],
+        '文山电大分校': [104.24, 23.37],
+        '文山州民族干部学校教学点': [104.24, 23.37],
+        '文山县职业高级中学': [101.98, 24.06],
+        '云南省农业广播电视学校富宁分校': [105.6, 23.62],
+        '文山分校广南县电大工作站': [105.09, 24.05],
+        '文山州丘北县工作站': [104.19, 24.03],
+        '西畴县职业高级中学': [104.68, 23.42],
+        '砚山县委党校': [104.35, 23.62],
+        '麻栗坡县民族职业高级中学': [104.71, 23.12],
+        '马关县民族职业高级中学': [104.4, 23.01],
+        '普洱电大分校': [101, 22.79],
+        '普洱市澜沧县委党校': [,],
+        '普洱市墨江县委党校电大工作站': [101.69, 23.43],
+        '思茅市景谷县教师进修学校教学点': [100.71, 23.5],
+        '宁洱县委党校': [,],
+        '江城县教师进修学校': [101.88, 22.58],
+        '景东县委党校': [100.82, 24.42],
+        '镇沅县委党校': [100.88, 23.9],
+        '西双版纳电大分校': [100.79, 22],
+        '勐腊县教师进修学校': [101.56, 21.48],
+        '西双版纳州勐海县电大工作站': [100.5, 21.95],
+        '大理电大分校': [100.24, 25.45],
+        '大理市中等职业学校': [100.24, 25.45],
+        '南涧职中': [100.51, 25.04],
+        '大理州弥渡县教师进修学校': [,],
+        '省电大祥云县职业高级中学': [100.56, 25.48],
+        '大理州剑川县教师进修学校教学点': [99.88, 26.53],
+        '大理州洱源县教师进修学校教学点': [99.94, 26.1],
+        '宾川县职业高级中学': [100.55, 25.82],
+        '鹤庆县职业高级中学': [100.18, 26.55],
+        '云龙县民族职业高级中学': [99.39, 25.9],
+        '巍山县职业高级中学': [100.33, 25.23],
+        '漾濞县职业高级中学': [99.98, 25.68],
+        '永平县职业高级中学': [99.52, 25.45],
+        '保山电大分校': [99.18, 25.12],
+        '施甸县电大工作站': [99.15, 24.69],
+        '腾冲电大工作站': [98.51, 25.01],
+        '云南电大龙陵县工作站': [98.7, 24.58],
+        '昌宁工作站': [99.61, 24.82],
+        '芒市职业教育中心': [98.58, 24.43],
+        '德宏州盈江县电大工作站': [97.93, 24.69],
+        '梁河县职业高级中学': [98.3, 24.78],
+        '丽江市古城区职业高级中学': [100.25, 26.86],
+        '华坪县教师进修学校': [101.24, 26.63],
+        '永胜县职业高级中学': [100.76, 26.71],
+        '玉龙县职业高级中学': [100.23, 26.82],
+        '宁蒗县职业高级中学': [100.82, 27.29],
+        '怒江电大分校': [98.85, 25.81],
+        '兰坪县职业技术学校': [99.29, 26.49],
+        '临沧分校': [100.08, 23.88],
+        '临沧市技工学校': [100.08, 23.88],
+        '临沧财贸学校': [100.08, 23.88],
+        '镇康电大工作站': [99.02, 23.92],
+        '永德电大工作站': [99.25, 24.03],
+        '临沧地区耿马县电大工作站': [99.39, 23.53],
+        '临沧地区凤庆县电大工作站': [100.08, 23.88],
+        '中共沧源县委党校': [99.24, 23.15],
+        '沧源电大工作站': [99.24, 23.15],
+        '云县电大工作站': [100.12, 24.44],
+        '双江职教中心': [99.85, 23.45],
+        '迪庆州民族中等专业学校': [99.72, 27.78],
+        //二级学院
+        '曲靖开放学院': [103.79, 25.51],
+        '珠江源工商开放学院': [103.79, 25.51],
+        '玉溪开放学院': [102.52, 24.35],
+        '红塔开放学院': [102.52, 24.35],
+        '保山开放学院': [99.18, 25.12],
+        '腾冲开放学院': [98.51, 25.01],
+        '临沧开放学院': [100.08, 23.88],
+        '怒江开放学院': [98.85, 25.81],
+        '昭通开放学院': [103.7, 27.32],
+        '丽江开放学院': [100.25, 26.86],
+        '德宏开放学院': [98.58, 24.43],
+        '芒市开放学院': [98.58, 24.43],
+        '大理开放学院': [100.18, 26.55],
+        '祥云开放学院': [100.56, 25.48],
+        '迪庆开放学院': [99.72, 27.78],
+        '红河开放学院': [102.79, 23.64],
+        '科技开放学院': [102.73, 25.04],
+        '昆明职工开放学院': [102.73, 25.04],
+        '昆明开放学院': [102.73, 25.04],
+        '版纳开放学院': [100.79, 22],
+        '普洱开放学院': [101.03, 23.07],
+        '楚雄开放学院': [101.54, 25.01],
+        '文山开放学院': [104.24, 23.37],
+        '云南开放大学特殊教育学院': [102.73, 25.04],
+        '云南交通运输开放学院': [102.44, 24.95]
+
+    };
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value)
+                });
+            }
+        }
+        return res;
+    };
+    var myChart_jxd_xxzx_fb = echarts.init(document.getElementById('jxd_xxzx_fb'));
+    myChart_jxd_xxzx_fb.setOption({
+        backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+            offset: 0,
+            color: '#f7f8fa'
+        }, {
+            offset: 1,
+            color: '#cdd0d5'
+        }]),
+        title: {
+            text: '云南开放大学办学体系',
+            subtext: '数据截止于2017年4月',
+            left: 'center'
+        },
+
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params) {
+                return params.name;
+            }
+        },
+        toolbox: {
+            show: true,
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+            feature: {
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        legend: {
+            orient: 'vertical',
+            y: 'center',
+            x: 'left',
+            data: ['本部（云南开放大学）', '二级学院（25所）', '教学点（132个）', '学习中心（境内23个）']
+        },
+
+        geo: {
+            map: '云南',
+            zoom: 1.3,
+            label: {
+                emphasis: {
+                    show: false
+                }
+            },
+            roam: true,
+            itemStyle: {
+                normal: {
+                    areaColor: '#323c48',
+                    borderColor: '#31'
+                },
+                emphasis: {
+                    areaColor: '#2a333d'
+                }
+            }
+        },
+
+        series: [{
+            name: '本部（云南开放大学）',
+            type: 'effectScatter',
+            coordinateSystem: 'geo',
+
+            data: convertData([
+                {name: "云南开放大学本部", value: 17}
+
+            ]),
+            symbolSize: function (val) {
+                return val[2];
+            },
+            showEffectOn: 'render',
+            rippleEffect: {
+                brushType: 'stroke'
+            },
+            hoverAnimation: true,
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'top',
+                    show: true
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#f4e925',
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            zlevel: 2
+        }, {
+            name: '二级学院（25所）',
+            type: 'effectScatter',
+            coordinateSystem: 'geo',
+
+            data: convertData([
+                {name: "曲靖开放学院", value: 13},
+                {name: "珠江源工商开放学院", value: 13},
+                {name: "玉溪开放学院", value: 13},
+                {name: "红塔开放学院", value: 13},
+                {name: "保山开放学院", value: 13},
+                {name: "腾冲开放学院", value: 13},
+                {name: "临沧开放学院", value: 13},
+                {name: "怒江开放学院", value: 13},
+                {name: "昭通开放学院", value: 13},
+                {name: "丽江开放学院", value: 13},
+                {name: "德宏开放学院", value: 13},
+                {name: "芒市开放学院", value: 13},
+                {name: "大理开放学院", value: 13},
+                {name: "祥云开放学院", value: 13},
+                {name: "迪庆开放学院", value: 13},
+                {name: "红河开放学院", value: 13},
+                {name: "科技开放学院", value: 13},
+                {name: "昆明职工开放学院", value: 13},
+                {name: "昆明开放学院", value: 13},
+                {name: "版纳开放学院", value: 13},
+                {name: "普洱开放学院", value: 13},
+                {name: "楚雄开放学院", value: 13},
+                {name: "文山开放学院", value: 13},
+                {name: "云南开放大学特殊教育学院", value: 13},
+                {name: "云南交通运输开放学院", value: 13}
+            ]),
+            symbolSize: function (val) {
+                return val[2];
+            },
+            showEffectOn: 'render',
+            rippleEffect: {
+                brushType: 'stroke'
+            },
+            hoverAnimation: true,
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'bottom',
+                    show: false
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#d94e5d',
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            zlevel: 1
+        }, {
+            name: '教学点（132个）',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+
+            data: convertData([
+                {name: "云南广播电视大学直属分校", value: 7},
+                {name: "昆明市总工会分校", value: 7},
+                {name: "云南电大政法分校", value: 7},
+                {name: "昆明五华新联大职业教育培训中心", value: 7},
+                {name: "昆明广播电视大学", value: 7},
+                {name: "云南省交通高级技工学校", value: 7},
+                {name: "安宁市委党校", value: 7},
+                {name: "昆明东川区职业成人教育培训中心", value: 7},
+                {name: "富民县职业高级中学", value: 7},
+                {name: "禄劝县委党校", value: 7},
+                {name: "石林县电大工作站", value: 7},
+                {name: "嵩明县农广校", value: 7},
+                {name: "寻甸县教师进修学校", value: 7},
+                {name: "中共宜良县委党校", value: 7},
+                {name: "晋宁县教师进修学校", value: 7},
+                {name: "曲靖电大分校", value: 7},
+                {name: "曲靖工商职业技术学校", value: 7},
+                {name: "曲靖市麒麟区职业高级中学", value: 7},
+                {name: "曲靖财经学校", value: 7},
+                {name: "富源县农业广播电视大学", value: 7},
+                {name: "会泽县农业广播电视学校", value: 7},
+                {name: "罗平县农业广播电视学校", value: 7},
+                {name: "马龙县职业技术学校", value: 7},
+                {name: "云南广播电视大学宣威工作站", value: 7},
+                {name: "沾益县职业教育培训中心", value: 7},
+                {name: "玉溪电大分校", value: 7},
+                {name: "玉溪第二职业高级中学", value: 7},
+                {name: "新平县职业高级中学", value: 7},
+                {name: "通海县教师进修学校", value: 7},
+                {name: "江川教师进修学校", value: 7},
+                {name: "澄江县农广校", value: 7},
+                {name: "峨山县职业中学", value: 7},
+                {name: "元江县职业高级中学", value: 7},
+                {name: "华宁县职业高级中学", value: 7},
+                {name: "易门县职业高级中学诶", value: 7},
+                {name: "昭通电大分校", value: 7},
+                {name: "昭通市财贸学校", value: 7},
+                {name: "昭阳区工作站", value: 7},
+                {name: "昭通市巧家县电大工作站", value: 7},
+                {name: "昭通市鲁甸县工作站", value: 7},
+                {name: "水富县职业高级中学", value: 7},
+                {name: "昭通市绥江县工作站", value: 7},
+                {name: "威信县工作站", value: 7},
+                {name: "昭通市盐津县工作站", value: 7},
+                {name: "彝良县电大工作站", value: 7},
+                {name: "昭通市永善县工作站", value: 7},
+                {name: "镇雄县教师进修学校", value: 7},
+                {name: "大关县职业高级中学", value: 7},
+                {name: "楚雄电大分校", value: 7},
+                {name: "楚雄职业高级中学", value: 7},
+                {name: "大姚县职中教学点", value: 7},
+                {name: "禄丰县教学点", value: 7},
+                {name: "楚雄州牟定县职业高级中学教学点", value: 7},
+                {name: "南华职中教学点", value: 7},
+                {name: "楚雄州武定县委党校办学点", value: 7},
+                {name: "楚雄州永仁县委党校教学点", value: 7},
+                {name: "楚雄州元谋县委党校教学点", value: 7},
+                {name: "姚安县职业高级中学", value: 7},
+                {name: "红河分校", value: 7},
+                {name: "蒙自教师进修学校", value: 7},
+                {name: "红河州红河县教师进修学校", value: 7},
+                {name: "云南电大建水县农广校教学点", value: 7},
+                {name: "红河州建水县教师进修学校", value: 7},
+                {name: "金平县工作站", value: 7},
+                {name: "红河州绿春县教师进修学校", value: 7},
+                {name: "红河州石屏县教师进修学校", value: 7},
+                {name: "红河州元阳县工作站", value: 7},
+                {name: "个旧市第一职业高级中学", value: 7},
+                {name: "开远市职业高级中学", value: 7},
+                {name: "泸西县职业技术教育中心", value: 7},
+                {name: "弥勒县民族职业高级中学", value: 7},
+                {name: "文山电大分校", value: 7},
+                {name: "文山州民族干部学校教学点", value: 7},
+                {name: "文山县职业高级中学", value: 7},
+                {name: "云南省农业广播电视学校富宁分校", value: 7},
+                {name: "文山分校广南县电大工作站", value: 7},
+                {name: "文山州丘北县工作站", value: 7},
+                {name: "西畴县职业高级中学", value: 7},
+                {name: "砚山县委党校", value: 7},
+                {name: "麻栗坡县民族职业高级中学", value: 7},
+                {name: "马关县民族职业高级中学", value: 7},
+                {name: "普洱电大分校", value: 7},
+                {name: "普洱市澜沧县委党校", value: 7},
+                {name: "普洱市墨江县委党校电大工作站", value: 7},
+                {name: "思茅市景谷县教师进修学校教学点", value: 7},
+                {name: "宁洱县委党校", value: 7},
+                {name: "江城县教师进修学校", value: 7},
+                {name: "景东县委党校", value: 7},
+                {name: "镇沅县委党校", value: 7},
+                {name: "西双版纳电大分校", value: 7},
+                {name: "勐腊县教师进修学校", value: 7},
+                {name: "西双版纳州勐海县电大工作站", value: 7},
+                {name: "大理电大分校", value: 7},
+                {name: "大理市中等职业学校", value: 7},
+                {name: "南涧职中", value: 7},
+                {name: "大理州弥渡县教师进修学校", value: 7},
+                {name: "省电大祥云县职业高级中学", value: 7},
+                {name: "大理州剑川县教师进修学校教学点", value: 7},
+                {name: "大理州洱源县教师进修学校教学点", value: 7},
+                {name: "宾川县职业高级中学", value: 7},
+                {name: "鹤庆县职业高级中学", value: 7},
+                {name: "云龙县民族职业高级中学", value: 7},
+                {name: "巍山县职业高级中学", value: 7},
+                {name: "漾濞县职业高级中学", value: 7},
+                {name: "永平县职业高级中学", value: 7},
+                {name: "保山电大分校", value: 7},
+                {name: "施甸县电大工作站", value: 7},
+                {name: "腾冲电大工作站", value: 7},
+                {name: "云南电大龙陵县工作站", value: 7},
+                {name: "昌宁工作站", value: 7},
+                {name: "芒市职业教育中心", value: 7},
+                {name: "德宏州盈江县电大工作站", value: 7},
+                {name: "梁河县职业高级中学", value: 7},
+                {name: "丽江市古城区职业高级中学", value: 7},
+                {name: "华坪县教师进修学校", value: 7},
+                {name: "永胜县职业高级中学", value: 7},
+                {name: "玉龙县职业高级中学", value: 7},
+                {name: "宁蒗县职业高级中学", value: 7},
+                {name: "怒江电大分校", value: 7},
+                {name: "兰坪县职业技术学校", value: 7},
+                {name: "临沧分校", value: 7},
+                {name: "临沧市技工学校", value: 7},
+                {name: "临沧财贸学校", value: 7},
+                {name: "镇康电大工作站", value: 7},
+                {name: "永德电大工作站", value: 7},
+                {name: "临沧地区耿马县电大工作站", value: 7},
+                {name: "临沧地区凤庆县电大工作站", value: 7},
+                {name: "中共沧源县委党校", value: 7},
+                {name: "沧源电大工作站", value: 7},
+                {name: "云县电大工作站", value: 7},
+                {name: "双江职教中心", value: 7},
+                {name: "迪庆州民族中等专业学校", value: 7}
+
+            ]),
+            symbolSize: function (val) {
+                return val[2];
+            },
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'right',
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#eac736'
+                }
+            }
+        },
+            {
+                name: '学习中心（境内23个）',
+                type: 'scatter',
+                coordinateSystem: 'geo',
+
+                data: convertData([
+                    {name: "绿春学习中心", value: 12},
+                    {name: "鲁甸学习中心", value: 12},
+                    {name: "金平学习中心", value: 12},
+                    {name: "丽江古城学习中心", value: 12},
+                    {name: "盐津学习中心", value: 12},
+                    {name: "永胜学习中心", value: 12},
+                    {name: "玉龙学习中心", value: 12},
+                    {name: "盈江学习中心", value: 12},
+                    {name: "建水学习中心", value: 12},
+                    {name: "昭阳区学习中心", value: 12},
+                    {name: "永德学习中心", value: 12},
+                    {name: "砚山干部在线学习中心", value: 12},
+                    {name: "云南省终身教育宾川学习中心", value: 12},
+                    {name: "富宁学习中心", value: 12},
+                    {name: "绥江学习中心", value: 12},
+                    {name: "宁蒗学习中心", value: 12},
+                    {name: "文山学习中心", value: 12},
+                    {name: "昌宁学习中心", value: 12},
+                    {name: "腾冲学习中心", value: 12},
+                    {name: "瑞丽学习中心", value: 12},
+                    {name: "蒙自学习中心", value: 12},
+                    {name: "武定学习中心", value: 12},
+                    {name: "陇川学习中心", value: 12}
+
+                ]),
+                symbolSize: function (val) {
+                    return val[2];
+                },
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#50a3ba'
+                    }
+                }
+
+            }]
+    });
+    //浏览器大小改变时重置大小
+    window.addEventListener("resize", function () {
+        myChart_jxd_xxzx_fb.resize();
+    });
+</script>
+<script type="text/javascript">
+    var geoCoordMap = {
+        '云南开放大学': [102.73, 25.04],
+        '孟加拉国学习中心': [90.407143, 23.709921],
+        '马尔代夫学习中心': [73.5, 4.2],
+        '斯里兰卡学习中心': [79.861243, 6.927079]
+    };
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value)
+                });
+            }
+        }
+        return res;
+    };
+
+    var myChart_jwxxzx = echarts.init(document.getElementById('jwxxzx'));
+    myChart_jwxxzx.setOption({
+        backgroundColor: '#404a59',
+        title: {
+            text: '云南开放大学办学体系',
+            subtext: '境外学习中心',
+            left: 'center',
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        toolbox: {
+            show: true,
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+            feature: {
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+
+        tooltip: {
+            trigger: 'item',
+            borderRadius: 8, //边框圆角  
+            backgroundColor: 'rgba(51,204,204,0.7)', //背景颜色（此时为默认色）  
+            formatter: function (params) {
+                var res = params.name + '<br/>'; //名称  
+                var s = myChart.getOption();
+                if (params.name.substring(params.name.length - 1) != '心') {
+                    for (var j = 0; j < s.series[0].markPoint.data.length; j++) {
+                        if (s.series[0].markPoint.data[j].name == params.name) {//图片地址  
+                            res += "<img style='width:250px;height:150px;' src='img/" + params.name + ".jpg'/>";
+                        }
+                    }
+                }
+                return res;
+            },
+            textStyle: {color: '#ffff', align: 'center', fontSize: 18}
+        },
+        legend: {
+            orient: 'vertical',
+            y: 'center',
+            x: 'left',
+            data: ['本部（云南开放大学）', '境外学习中心'],
+            textStyle: {
+                color: '#fff'
+            }
+        },
+
+        geo: {
+            map: 'world',
+            left: '10',
+            right: '35%',
+            center: [60, 20],
+            roam: true,
+            zoom: 5.0,
+            label: {
+                emphasis: {
+                    show: false
+                }
+            },
+            itemStyle: {
+                normal: {
+                    areaColor: '#323c48',
+                    borderColor: '#111'
+                },
+                emphasis: {
+                    areaColor: '#2a333d'
+                }
+            }
+        },
+
+        series: [{
+            name: '境外学习中心',
+            type: 'effectScatter',
+            coordinateSystem: 'geo',
+
+            data: convertData([
+                {name: "孟加拉国学习中心", value: 15},
+                {name: "马尔代夫学习中心", value: 15},
+                {name: "斯里兰卡学习中心", value: 15}
+            ]),
+            symbolSize: function (val) {
+                return val[2];
+            },
+            showEffectOn: 'render',
+            rippleEffect: {
+                brushType: 'stroke'
+            },
+            hoverAnimation: true,
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'left',
+                    show: true
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#50a3ba',
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            zlevel: 1
+        },
+            {
+                name: '本部（云南开放大学）',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+
+                data: convertData([
+                    {name: "云南开放大学", value: 20}
+                ]),
+                symbolSize: function (val) {
+                    return val[2];
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'top',
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#f4e925',
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                zlevel: 1
+            }]
+    });
+    //浏览器大小改变时重置大小
+    window.addEventListener("resize", function () {
+        myChart_jwxxzx.resize();
+    });
+
+</script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
