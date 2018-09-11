@@ -1,4 +1,4 @@
-// // 基于准备好的dom，初始化echarts实例
+﻿// // 基于准备好的dom，初始化echarts实例
 
 var grad_element = document.getElementById('grad-student-area-chart');
 var myChart_grad = echarts.init(grad_element);
