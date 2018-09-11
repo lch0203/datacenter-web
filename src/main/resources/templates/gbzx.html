@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>干部在线学习</title>
+
+    <link rel="icon" class="fa fa-windows fa-fw" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/dist/css/sbadmin2-sidebar-toggle.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ECharts -->
+    <script src="/Echart3/dist/echarts.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+
+<div id="wrapper" class="toggled">
+
+    <!-- Navigation -->
+    <div th:replace="common :: navbar"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">干部在线学习</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-twitter fa-fw"></i><span>州市学员分布</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="city_student_dist" style="height: 600px;width: auto"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>学员构成</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="consist_of_student" style="height: 600px;width: auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-image fa-fw"></i><span>云南省干部在线学习学院10年发展</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="ten_years_develop" style="height: 600px;width: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!--</footer>-->
+    <div th:replace="common :: footer"></div>
+
+
+    <!-- jQuery -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!--&lt;!&ndash; Morris Charts JavaScript &ndash;&gt;-->
+    <!--<script src="/vendor/raphael/raphael.min.js"></script>-->
+    <!--<script src="/vendor/morrisjs/morris.min.js"></script>-->
+    <!--<script src="/data/morris-data.js"></script>-->
+
+    <!--Echart3 data-->
+    <script type="text/javascript" src="/Echart3/map/js/province/yunnan.js"></script>
+    <!--<script type="text/javascript" src="/Echart3/map/js/world.js"></script>-->
+
+    <!--基础数据-->
+    <script>
+        var statisticsTime = '统计时间:2018年9月3日';
+
+        var waterMarkText = '云南开放大学';
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        canvas.width = canvas.height = 100;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.globalAlpha = 0.08;
+        ctx.font = '20px Microsoft Yahei';
+        ctx.translate(50, 50);
+        ctx.rotate(-Math.PI / 4);
+        ctx.fillText(waterMarkText, 0, 0);
+
+    </script>
+
+    <!--city_student_dist  州市学员分布-->
+    <script type="text/javascript">
+        var city_Student_Dist_Chart = echarts.init(document.getElementById('city_student_dist'));
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: {
+                text: '干部在线州市学员分布',
+                subtext: '数据来源于干部在线学院2018年8月27日',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+
+            visualMap: {
+                min: 1500,
+                max: 15000,
+                left: 'left',
+                top: 'bottom',
+                text: ['高', '低'],           // 文本，默认为数值文本
+                calculable: true
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [{
+                name: '州市学员',
+                type: 'map',
+                map: '云南',
+                roam: false,
+                label: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                roam: true,
+                data: [
+                    {name: '昆明市', value: 17382},
+                    {name: '曲靖市', value: 10041},
+                    {name: '玉溪市', value: 7144},
+                    {name: '保山市', value: 6903},
+                    {name: '昭通市', value: 10185},
+                    {name: '丽江市', value: 8476},
+                    {name: '普洱市', value: 15923},
+                    {name: '临沧市', value: 16831},
+                    {name: '楚雄彝族自治州', value: 15367},
+                    {name: '红河哈尼族彝族自治州', value: 8899},
+                    {name: '文山壮族苗族自治州', value: 16480},
+                    {name: '西双版纳傣族自治州', value: 3697},
+                    {name: '大理白族自治州', value: 13410},
+                    {name: '德宏傣族景颇族自治州', value: 5539},
+                    {name: '怒江傈僳族自治州', value: 3368},
+                    {name: '迪庆藏族自治州', value: 2002}
+                ]
+            }]
+        };
+
+        if (option && typeof option === "object") {
+            city_Student_Dist_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            city_Student_Dist_Chart.resize();
+        });
+    </script>
+
+    <!--consist_of_student 学员构成-->
+    <script type="text/javascript">
+        var consist_of_Student_Chart = echarts.init(document.getElementById('consist_of_student'));
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: {
+                text: "干部在线学员构成",
+                subtext: "学员分布与职级结构",
+                left: "center"
+            },
+            backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+                offset: 0,
+                color: '#f7f8fa'
+            }, {
+                offset: 1,
+                color: '#cdd0d5'
+            }]),
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}:({d}%)"
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            series: [{
+                name: '职级结构',
+                type: 'pie',
+                selectedMode: 'single',
+                radius: [0, '25%'],
+                label: {
+                    normal: {
+                        position: 'outer'
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: true
+                    }
+                },
+                data: [{
+                    'name': '厅级干部',
+                    'value': 1823
+                }, {
+                    'name': '处级',
+                    'value': 28165
+                }, {
+                    'name': '科级及其它',
+                    'value': 120000
+                }]
+            }, {
+                name: '学员来源',
+                type: 'pie',
+                radius: ['50%', '65%'],
+
+                data: [{
+                    'name': '省委各部委',
+                    'value': 1076
+                }, {
+                    'name': '省级国家机关',
+                    'value': 10602
+                }, {
+                    'name': '省人民团体',
+                    'value': 608
+                }, {
+                    'name': '省属大专院校',
+                    'value': 4011
+                }, {
+                    'name': '省属企事业单位',
+                    'value': 4626
+                }, {
+                    'name': '昆明市',
+                    'value': 13633
+                }, {
+                    'name': '曲靖市',
+                    'value': 7925
+                }, {
+                    'name': '玉溪市',
+                    'value': 6131
+                }, {
+                    'name': '保山市',
+                    'value': 5718
+                }, {
+                    'name': '昭通市',
+                    'value': 8699
+                }, {
+                    'name': '丽江市',
+                    'value': 4450
+                }, {
+                    'name': '普洱市',
+                    'value': 3964
+                }, {
+                    'name': '临沧市',
+                    'value': 14750
+                }, {
+                    'name': '楚雄州',
+                    'value': 13423
+                }, {
+                    'name': '红河州',
+                    'value': 6756
+                }, {
+                    'name': '文山州',
+                    'value': 11095
+                }, {
+                    'name': '西双版纳',
+                    'value': 2847
+                }, {
+                    'name': '大理州',
+                    'value': 11309
+                }, {
+                    'name': '德宏州',
+                    'value': 4238
+                }, {
+                    'name': '怒江州',
+                    'value': 3011
+                }, {
+                    'name': '迪庆州',
+                    'value': 1841
+                }]
+            }]
+        };
+
+        if (option && typeof option === "object") {
+            consist_of_Student_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            consist_of_Student_Chart.resize();
+        });
+    </script>
+
+    <!--ten_years_develop 云南省干部在线学习学院10年发展-->
+    <script type="text/javascript">
+        var ten_Years_Develop_Chart = echarts.init(document.getElementById('ten_years_develop'));
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: [{
+                text: '参学人数',
+                x: '35%',
+                textAlign: 'center'
+            }, {
+                text: '参学率(%)',
+                x: '80%',
+                textAlign: 'center'
+            }, {
+                text: '通过率(%)',
+                x: '80%',
+                y: '50%',
+                textAlign: 'center'
+            }],
+            legend: {
+                data: ['参学人数(人)', '参学率(%)', '通过率(%)'],
+                top: 'bottom'
+            },
+
+            tooltip: {
+                trigger: 'axis'
+            },
+            grid: [{
+                top: 50,
+                width: '65%',
+                left: 10,
+                containLabel: true
+            }, {
+                top: 50,
+                width: '25%',
+                bottom: '55%',
+                left: '70%',
+                containLabel: true
+            }, {
+                top: '55%',
+                width: '25%',
+                left: '70%',
+                containLabel: true
+            }],
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    gridIndex: 0,
+                    data: ['2007年', '2008年', '2009年', '2010年', '2011年', '2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年']
+                },
+                {
+                    type: 'category',
+                    gridIndex: 1,
+                    data: ['2015年', '2016年', '2017年']
+                },
+                {
+                    type: 'category',
+                    gridIndex: 2,
+                    data: ['2015年', '2016年', '2017年']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '参学人数(人)',
+                    min: 0,
+                    max: 180000,
+                    gridIndex: 0,
+                    position: 'left',
+                    axisLabel: {
+                        formatter: '{value} '
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '参学率(%)',
+                    min: 0,
+                    max: 100,
+                    gridIndex: 1,
+                    position: 'right',
+                    axisLabel: {
+                        formatter: '{value}% '
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '通过率(%)',
+                    min: 0,
+                    max: 100,
+                    gridIndex: 2,
+                    position: 'right',
+                    axisLabel: {
+                        formatter: '{value}% '
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '参学人数(人)',
+                    type: 'bar',
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{c}'
+                            }
+                        }
+                    },
+                    data: [500, 1500, 4000, 15891, 80497, 91458, 97142, 124014, 138084, 147305, 180067, 177997]
+                },
+                {
+                    name: '参学率(%)',
+                    type: 'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{c}%'
+                            }
+                        }
+                    },
+                    data: [89, 89, 92]
+                },
+                {
+                    name: '通过率(%)',
+                    type: 'bar',
+                    xAxisIndex: 2,
+                    yAxisIndex: 2,
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{c}%'
+                            }
+                        }
+                    },
+                    data: [81, 85, 90]
+                }
+            ]
+        };
+        if (option && typeof option === "object") {
+            ten_Years_Develop_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            ten_Years_Develop_Chart.resize();
+        });
+    </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/dist/js/sb-admin-2.js"></script>
+    <script src="/js/toggled.js"></script>
+</div>
+
+</body>
+
+</html>

@@ -1,10 +1,9 @@
 var dom = document.getElementById("zc_2018_data");
 var myChart_zc_2018 = echarts.init(dom);
 var app = {};
-option = null;
 app.title = '2018年各类在册学生占比';
 
-option = {
+var option = {
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -71,8 +70,8 @@ option = {
             },
             data: [
                 {value: 2081, name: '开放本科'}, //'开放本科', '开放专科', '开放专升本', '高职'
-                {value: 607, name: '开放专升本'},
-                {value: 144617, name: '开放专科'},
+                {value: 2532, name: '开放专升本'},
+                {value: 147872, name: '开放专科'},
                 {value: 6743, name: '高职'}
             ]
         }

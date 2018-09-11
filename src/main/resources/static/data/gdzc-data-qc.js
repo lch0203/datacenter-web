@@ -1,7 +1,7 @@
 var dom = document.getElementById("gdzc_data_qc");
 var myChart_gdzc_qc = echarts.init(dom);
 var app = {};
-option = null;
+var option = null;
 app.title = '固定资产分类期初(2018年1月1日)';
 
 option = {
@@ -12,7 +12,7 @@ option = {
     legend: {
         orient: 'horizontal',
         x: 'right',
-        data: ['土地、房屋及构筑物', '通用设备','专用设备', '文物和陈列品', '图书、档案', '家具、用具、装具及动植物', '无形资产']
+        data: [ '通用设备','专用设备', '文物和陈列品', '图书、档案', '家具、用具、装具及动植物', '无形资产','土地、房屋及构筑物']
     },
     grid: {
         left: '1%',
@@ -71,17 +71,17 @@ option = {
                 }
             },
             data:[
-                {value:675771311.99, name:'土地、房屋及构筑物'},
                 {value:168339560.26, name:'通用设备'},
                 {value:41107342.89, name:'专用设备'},
                 {value:3335842.00, name:'文物和陈列品'},
                 {value:14981114.50, name:'图书、档案'},
                 {value:26650154.44, name:'家具、用具、装具及动植物'},
-                {value:4939300.00, name:'无形资产'}
+                {value:4939300.00, name:'无形资产'},
+                {value:675771311.99, name:'土地、房屋及构筑物'}
             ]
         }
     ]
-};;
+};
 if (option && typeof option === "object") {
     myChart_gdzc_qc.setOption(option, true);
 }

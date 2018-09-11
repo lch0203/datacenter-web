@@ -7,7 +7,6 @@ import org.jasig.cas.client.authentication.AttributePrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -31,6 +30,9 @@ public class IndexController {
 
     @Value("${map.url.id2}")
     private String mapUrlId2;
+
+    @Value("${map.url.id3}")
+    private String mapUrlId3;
 
     @GetMapping(value = "/")
     public String index(Model model) {
@@ -68,16 +70,17 @@ public class IndexController {
     }
 
     /***
-     * 村干部
+     * 村干部(乡村振兴)
      * @param model
      * @return
      */
-    @GetMapping(value = "/cgb")
+    @GetMapping(value = "/xczx")
     public String cgb(Model model) {
         principal = (AttributePrincipal) request.getUserPrincipal();
         attributes = principal.getAttributes();
+        model.addAttribute("mapUrlId3",mapUrlId3);
         model.addAttribute("attributes", attributes);
-        return "cgb";
+        return "xczx";
     }
 
     /***
@@ -130,18 +133,18 @@ public class IndexController {
         return null;
     }
 
-    /***
-     * 2012年-2017年各类型在校生数、毕业生数统计
-     * @param model
-     * @return
-     */
-    @GetMapping(value = "/zxstj")
-    public String zxstj(Model model) {
-        principal = (AttributePrincipal) request.getUserPrincipal();
-        attributes = principal.getAttributes();
-        model.addAttribute("attributes", attributes);
-        return "zxstj";
-    }
+//    /***
+//     * 2012年-2017年各类型在校生数、毕业生数统计
+//     * @param model
+//     * @return
+//     */
+//    @GetMapping(value = "/zxstj")
+//    public String zxstj(Model model) {
+//        principal = (AttributePrincipal) request.getUserPrincipal();
+//        attributes = principal.getAttributes();
+//        model.addAttribute("attributes", attributes);
+//        return "zxstj";
+//    }
 
 
 }

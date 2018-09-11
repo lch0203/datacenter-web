@@ -24,6 +24,7 @@
 
     <!-- Custom CSS -->
     <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/dist/css/sbadmin2-sidebar-toggle.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="/vendor/morrisjs/morris.css" rel="stylesheet">
@@ -41,23 +42,13 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-        .app-footer {
-            min-height: 50px;
-            padding: 0 1rem;
-            text-align: center;
-            line-height: 50px;
-            color: #263238;
-            background: #f8f8f8;
-            border-top: 1px solid #cfd8dc;
-        }
-    </style>
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
 
-<div id="wrapper">
+<div id="wrapper" class="toggled">
 
     <!-- Navigation -->
     <div th:replace="common :: navbar"></div>
@@ -115,7 +106,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/dist/js/sb-admin-2.js"></script>
-
+<script src="/js/toggled.js"></script>
 </body>
 
 </html>

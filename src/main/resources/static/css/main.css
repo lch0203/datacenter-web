@@ -1,0 +1,13 @@
+.app-footer {
+    min-height: 50px;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 50px;
+    color: #263238;
+    background: #f8f8f8;
+    border-top: 1px solid #cfd8dc;
+}
+
+/*#page-wrapper {*/
+    /*margin-top: 50px;*/
+/*}*/

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>办学规模</title>
+
+    <link rel="icon" class="fa fa-windows fa-fw" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/dist/css/sbadmin2-sidebar-toggle.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ECharts -->
+    <script src="/Echart3/dist/echarts.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<div id="wrapper" class="toggled">
+
+    <!-- Navigation -->
+    <div th:replace="common :: navbar"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">办学规模</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-twitter fa-fw"></i><span>2012年~2017年注册在校生规模</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="register_full_time_student_12_16" style="height: 300px;width: auto"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>2017年底各类在校生占比</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="scale_full_time_student_16" style="height: 300px;width: auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-twitter fa-fw"></i><span> 云南开放大学开放教育招生人数地区分布</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="open_edu_enroll_dist" style="height: 600px;width: auto"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>2012年~2017年开放教育招生人数</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="open_edu_enroll_students_12_16" style="height: 600px;width: auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-image fa-fw"></i><span>生源分布</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="enroll_dist" style="height: 600px;width: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> 云南开放大学2012年-2017年各类型在校生数、毕业生数统计表
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="info text-center">
+                                        <th style="vertical-align: middle;text-align: center" colspan=2 rowspan=2></th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2012年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2013年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2014年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2015年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2016年</th>
+                                        <th style="vertical-align: middle;text-align: center" colspan=2>2017年</th>
+                                    </tr>
+                                    <tr class="info text-center">
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                        <th style="vertical-align: middle;text-align: center">在册生数</th>
+                                        <th style="vertical-align: middle;text-align: center">毕业生数</th>
+                                    </tr>
+                                    </thead>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" rowspan=2>开放教育</td>
+                                        <td style="vertical-align: middle">国开大</td>
+                                        <td style="vertical-align: middle">47804人</td>
+                                        <td style="vertical-align: middle">8516人</td>
+                                        <td style="vertical-align: middle">49135人</td>
+                                        <td style="vertical-align: middle">9805人</td>
+                                        <td style="vertical-align: middle">46876人</td>
+                                        <td style="vertical-align: middle">10075人</td>
+                                        <td style="vertical-align: middle">43888人</td>
+                                        <td style="vertical-align: middle">9059人</td>
+                                        <td style="vertical-align: middle">39494人</td>
+                                        <td style="vertical-align: middle">9558人</td>
+                                        <td style="vertical-align: middle">35943人</font></td>
+                                        <td style="vertical-align: middle">7954人</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle">云开大</td>
+                                        <td style="vertical-align: middle">28288人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">48658人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">68651人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">91683人</td>
+                                        <td style="vertical-align: middle">2738人</font></td>
+                                        <td style="vertical-align: middle">125592人</td>
+                                        <td style="vertical-align: middle">6582人</font></td>
+                                        <td style="vertical-align: middle">151532人</font></td>
+                                        <td style="vertical-align: middle">14053人</font></td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" colspan=2>国职院高职教育</td>
+                                        <td style="vertical-align: middle">7801人</td>
+                                        <td style="vertical-align: middle">2323人</td>
+                                        <td style="vertical-align: middle">7631人</td>
+                                        <td style="vertical-align: middle">2550人（含2名留学生）</td>
+                                        <td style="vertical-align: middle">7311人</td>
+                                        <td style="vertical-align: middle">2722人（含9名留学生）</td>
+                                        <td style="vertical-align: middle">7696人</td>
+                                        <td style="vertical-align: middle">2529人</td>
+                                        <td style="vertical-align: middle">8082人</td>
+                                        <td style="vertical-align: middle">2380人（含3名留学生）</td>
+                                        <td style="vertical-align: middle">9657人（含19名留学生）</td>
+                                        <td style="vertical-align: middle">2402人（含1名留学生）</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" rowspan=2>成人教育</td>
+                                        <td style="vertical-align: middle">云开大</td>
+                                        <td style="vertical-align: middle">4170人</td>
+                                        <td style="vertical-align: middle">885人</td>
+                                        <td style="vertical-align: middle">5042人</td>
+                                        <td style="vertical-align: middle">1623人</td>
+                                        <td style="vertical-align: middle">5720人</td>
+                                        <td style="vertical-align: middle">2131人</td>
+                                        <td style="vertical-align: middle">6821人</td>
+                                        <td style="vertical-align: middle">2403人</td>
+                                        <td style="vertical-align: middle">6788人</td>
+                                        <td style="vertical-align: middle">2964人</td>
+                                        <td style="vertical-align: middle">5893人</td>
+                                        <td style="vertical-align: middle">3577人</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle">国职院</td>
+                                        <td style="vertical-align: middle">475人</td>
+                                        <td style="vertical-align: middle">241人</td>
+                                        <td style="vertical-align: middle">443人</td>
+                                        <td style="vertical-align: middle">65人</td>
+                                        <td style="vertical-align: middle">295人</td>
+                                        <td style="vertical-align: middle">148人</td>
+                                        <td style="vertical-align: middle">164人</td>
+                                        <td style="vertical-align: middle">139人</td>
+                                        <td style="vertical-align: middle">164人</td>
+                                        <td style="vertical-align: middle">156人</td>
+                                        <td style="vertical-align: middle">8人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td style="vertical-align: middle" colspan=2>国职院五年制高职</td>
+                                        <td style="vertical-align: middle">1501人</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">2211人(高段315）</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">2283人（高段785）</td>
+                                        <td style="vertical-align: middle">0</td>
+                                        <td style="vertical-align: middle">2280人（高段782）</td>
+                                        <td style="vertical-align: middle">299人</td>
+                                        <td style="vertical-align: middle">2127人（高段1047）</td>
+                                        <td style="vertical-align: middle">463人</td>
+                                        <td style="vertical-align: middle">2010人（高段1196）</td>
+                                        <td style="vertical-align: middle">564人</td>
+                                    </tr>
+                                </table>
+
+                                <!-- /.table-responsive -->
+                            </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!--</footer>-->
+    <div th:replace="common :: footer"></div>
+
+
+    <!-- jQuery -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!--&lt;!&ndash; Morris Charts JavaScript &ndash;&gt;-->
+    <!--<script src="/vendor/raphael/raphael.min.js"></script>-->
+    <!--<script src="/vendor/morrisjs/morris.min.js"></script>-->
+    <!--<script src="/data/morris-data.js"></script>-->
+
+    <!--Echart3 data-->
+    <script type="text/javascript" src="/Echart3/map/js/province/yunnan.js"></script>
+    <script type="text/javascript" src="/Echart3/map/js/world.js"></script>
+
+    <!--基础数据-->
+    <script>
+        var statisticsTime = '数据截至时间:2017年12月31日';
+
+        var waterMarkText = '云南开放大学';
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        canvas.width = canvas.height = 100;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.globalAlpha = 0.08;
+        ctx.font = '20px Microsoft Yahei';
+        ctx.translate(50, 50);
+        ctx.rotate(-Math.PI / 4);
+        ctx.fillText(waterMarkText, 0, 0);
+
+    </script>
+    <!-- register_full_time_student_12_16 2012年~2018年注册在校生规模-->
+    <script type="text/javascript">
+        var register_Student_Chart = echarts.init(document.getElementById('register_full_time_student_12_16'));
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: {
+                text: '2012年~2017年各类在校学生规模',
+                subtext: statisticsTime,
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['开放教育', '高职教育', '成人教育（含五年制大专）'],
+                top: 'bottom'
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['2012年', '2013年', '2014年', '2015年', '2016年','2017年']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '开放教育',
+                    type: 'bar',
+                    data: [76092,97793,115527,135571,165086,187475],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{c}'
+                            }
+                        }
+                    }
+                }, {
+                    name: '高职教育',
+                    type: 'bar',
+                    data: [7801,7631,7311,7696,8082,9657],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{c}'
+                            }
+                        }
+                    }
+                },
+                {
+                    name: '成人教育（含五年制大专）',
+                    type: 'bar',
+                    data: [6146, 7696, 8298, 9265, 9079,8863],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{c}'
+                            }
+                        }
+                    }
+                }
+
+            ]
+        };
+
+        if (option && typeof option === "object") {
+            register_Student_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            register_Student_Chart.resize();
+        });
+    </script>
+
+    <!-- scale_full_time_student_16 2018年各类在校生占比-->
+    <script type="text/javascript">
+        var student_Scale_Chart = echarts.init(document.getElementById('scale_full_time_student_16'));
+
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                top: 'bottom',
+                data: ["开放教育", "高职教育", "成人教育（含五年制大专）"]
+            },
+            title: {
+                text: '云南开放大学各类教育在校生人数',
+                subtext: statisticsTime,
+                left: 'center'
+            },
+            series: [
+                {
+                    "name": "在校生人数",
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{b}:{c} ({d}%)',
+                            // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                            backgroundColor: '#eee',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            // shadowBlur:3,
+                            // shadowOffsetX: 2,
+                            // shadowOffsetY: 2,
+                            // shadowColor: '#999',
+                            // padding: [0, 7],
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center'
+                                },
+                                // abg: {
+                                //     backgroundColor: '#333',
+                                //     width: '100%',
+                                //     align: 'right',
+                                //     height: 22,
+                                //     borderRadius: [4, 4, 0, 0]
+                                // },
+                                hr: {
+                                    borderColor: '#aaa',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                b: {
+                                    fontSize: 16,
+                                    lineHeight: 33
+                                },
+                                per: {
+                                    color: '#eee',
+                                    backgroundColor: '#334455',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        }
+                    },
+                    data: [{name: '开放教育', value: 187475},
+                        {name: '高职教育', value: 6743},
+                        {name: '成人教育（含五年制大专）', value: 8363}
+                    ]
+
+                }]
+        };
+
+        if (option && typeof option === "object") {
+            student_Scale_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            student_Scale_Chart.resize();
+        });
+
+    </script>
+
+    <!-- open_edu_enroll_dist 云南开放大学开放教育招生人数地区分布-->
+    <script type="text/javascript">
+        var enroll_dist_Chart = echarts.init(document.getElementById('open_edu_enroll_dist'));
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: {
+                text: '云南开放大学开放教育招生数地区分布',
+                subtext: '2013年~2017年招生人数分布',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['2013年','2014年', '2015年', '2016年', '2017年']
+            },
+            visualMap: {
+                min: 0,
+                max: 29000,
+                left: 'left',
+                top: 'bottom',
+                text: ['高', '低'],           // 文本，默认为数值文本
+                calculable: true,
+                inRange: {
+                    color: ['lightskyblue', 'yellow', 'orangered']
+                }
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [{
+                name: '2013年',
+                type: 'map',
+                map: '云南',
+                roam: true,
+                label: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data: [
+                    {name: '昆明市', value: 1118},
+                    {name: '曲靖市', value: 11398},
+                    {name: '玉溪市', value: 15725},
+                    {name: '保山市', value: 6189},
+                    {name: '昭通市', value: 3752},
+                    {name: '丽江市', value: 2743},
+                    {name: '普洱市', value: 6886},
+                    {name: '临沧市', value: 4915},
+                    {name: '楚雄彝族自治州', value: 3335},
+                    {name: '红河哈尼族彝族自治州', value: 3589},
+                    {name: '文山壮族苗族自治州', value: 4918},
+                    {name: '西双版纳傣族自治州', value: 1427},
+                    {name: '大理白族自治州', value: 5857},
+                    {name: '德宏傣族景颇族自治州', value: 6189},
+                    {name: '怒江傈僳族自治州', value: 504},
+                    {name: '迪庆藏族自治州', value: 1367}
+                ]
+            },
+                {
+                    name: '2014年',
+                    type: 'map',
+                    map: '云南',
+                    roam: true,
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data: [
+                        {name: '昆明市', value: 5081},
+                        {name: '曲靖市', value: 3451},
+                        {name: '玉溪市', value: 3011},
+                        {name: '保山市', value: 946},
+                        {name: '昭通市', value: 637},
+                        {name: '丽江市', value: 389},
+                        {name: '普洱市', value: 1260},
+                        {name: '临沧市', value: 877},
+                        {name: '楚雄彝族自治州', value: 180},
+                        {name: '红河哈尼族彝族自治州', value: 524},
+                        {name: '文山壮族苗族自治州', value: 113},
+                        {name: '西双版纳傣族自治州', value: 358},
+                        {name: '大理白族自治州', value: 1099},
+                        {name: '德宏傣族景颇族自治州', value: 671},
+                        {name: '怒江傈僳族自治州', value: 99},
+                        {name: '迪庆藏族自治州', value: 222}
+                    ]
+                },
+                {
+                    name: '2015年',
+                    type: 'map',
+                    map: '云南',
+                    roam: true,
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data: [
+                        {name: '昆明市', value: 5659},
+                        {name: '曲靖市', value: 2945},
+                        {name: '玉溪市', value: 1981},
+                        {name: '保山市', value: 926},
+                        {name: '昭通市', value: 579},
+                        {name: '丽江市', value: 620},
+                        {name: '普洱市', value: 1604},
+                        {name: '临沧市', value: 470},
+                        {name: '楚雄彝族自治州', value: 472},
+                        {name: '红河哈尼族彝族自治州', value: 747},
+                        {name: '文山壮族苗族自治州', value: 520},
+                        {name: '西双版纳傣族自治州', value: 290},
+                        {name: '大理白族自治州', value: 980},
+                        {name: '德宏傣族景颇族自治州', value: 727},
+                        {name: '怒江傈僳族自治州', value: 26},
+                        {name: '迪庆藏族自治州', value: 251}
+                    ]
+                },
+                {
+                    name: '2016年',
+                    type: 'map',
+                    map: '云南',
+                    roam: true,
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data: [
+                        {name: '昆明市', value: 6569},
+                        {name: '曲靖市', value: 1958},
+                        {name: '玉溪市', value: 2559},
+                        {name: '保山市', value: 1074},
+                        {name: '昭通市', value: 482},
+                        {name: '丽江市', value: 419},
+                        {name: '普洱市', value: 1906},
+                        {name: '临沧市', value: 997},
+                        {name: '楚雄彝族自治州', value: 211},
+                        {name: '红河哈尼族彝族自治州', value: 762},
+                        {name: '文山壮族苗族自治州', value: 1608},
+                        {name: '西双版纳傣族自治州', value: 391},
+                        {name: '大理白族自治州', value: 1396},
+                        {name: '德宏傣族景颇族自治州', value: 554},
+                        {name: '怒江傈僳族自治州', value: 16},
+                        {name: '迪庆藏族自治州', value: 205}
+                    ]
+                },
+                {
+                    name: '2017年',
+                    type: 'map',
+                    map: '云南',
+                    roam: true,
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data: [
+                        {name: '昆明市', value: 9861},
+                        {name: '曲靖市', value: 8978},
+                        {name: '玉溪市', value: 3279},
+                        {name: '保山市', value: 2081},
+                        {name: '昭通市', value: 1629},
+                        {name: '丽江市', value: 573},
+                        {name: '普洱市', value: 2082},
+                        {name: '临沧市', value: 2285},
+                        {name: '楚雄彝族自治州', value: 2027},
+                        {name: '红河哈尼族彝族自治州', value: 1525},
+                        {name: '文山壮族苗族自治州', value: 2552},
+                        {name: '西双版纳傣族自治州', value: 317},
+                        {name: '大理白族自治州', value: 1748},
+                        {name: '德宏傣族景颇族自治州', value: 899},
+                        {name: '怒江傈僳族自治州', value: 187},
+                        {name: '迪庆藏族自治州', value: 468}
+                    ]
+                }]
+        };
+        if (option && typeof option === "object") {
+            enroll_dist_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            enroll_dist_Chart.resize();
+        });
+
+    </script>
+
+    <!-- open_edu_enroll_students_12_16 2014年~2018年开放教育招生人数-->
+    <script type="text/javascript">
+        var edu_Enroll_Students_Chart = echarts.init(document.getElementById('open_edu_enroll_students_12_16'));
+        var option1 = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            tooltip: {
+                show: true
+            },
+            legend: {
+                data: ['2012年~2017年开放教育招生规模']
+            },
+            title: {
+                text: '2012年~2017年开放教育招生规模',
+                subtext: statisticsTime,
+                left: 'center'
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ["2012年", "2013年", "2014年", "2015年", "2016年", "2017年"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    "name": "招生数",
+                    "type": "bar",
+                    itemStyle: {
+                        normal: {
+                            // //
+                            // color: function (params) {
+                            //     // build a color map as your need.
+                            //     var colorList = ['#FA8072'];
+                            //     return colorList[params.dataIndex]
+                            // },
+                            //以下为是否显示，显示位置和显示格式的设置了
+                            color:'#36648B',
+                            label: {
+                                show: true,
+                                position: 'top',
+                                //                             formatter: '{c}'
+                                formatter: '{c}'
+                            }
+                        }
+                    },
+                    // data: [22066, 18954, 18797, 21107, 40491]
+                    data:[37181,30217,27539,32857,45156,46015]
+                }
+            ]
+        };
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            title: {
+                text: '2012年~2017年开放教育招生规模',
+                subtext: statisticsTime,
+                left: 'center'
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                data:['云开','国开','汇总'],
+                top: 'bottom'
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '6%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['12年','13年','14年','15年','16年','17年']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'汇总',
+                    type:'bar',
+                    data:[39962,32405,29092,33352,47398,44659]
+                },
+                {
+                    name:'云开',
+                    type:'bar',
+                    stack: '01',
+                    data:[28288,20370,19993,25770,40491,39993]
+                },
+                {
+                    name:'国开',
+                    type:'bar',
+                    stack: '01',
+                    data:[11674,12035,9099,7582,6907,4666]
+                }
+            ]
+        };
+
+        if (option && typeof option === "object") {
+            edu_Enroll_Students_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            edu_Enroll_Students_Chart.resize();
+        });
+
+    </script>
+
+    <!-- enroll_dist  生源分布   -->
+    <script type="text/javascript">
+        var enroll_Dist_Chart = echarts.init(document.getElementById('enroll_dist'));
+        var builderJson = {
+            "all": 165525,
+            "charts": {
+                "国家开放本科(专科起点)": 10362,
+                "国家开放专科": 18403,
+                "国家一村一名大学生专科": 8115,
+                "国家课程开放专科": 45,
+                "国家助力计划专科": 13
+            },
+            "components": {
+                "云开大远程开放本科": 265,
+                "云开大专本衔接本科": 1692,
+                "云开大远程开放专科": 4344,
+                "云开大中高衔接专科": 94993,
+                "云开大一村一项目专科": 4200,
+                "云开大校地合作项目专科": 6885,
+                "云开大滇西青年创业计划专科": 400,
+                "云开大成人本科": 558,
+                "云开大成人专科": 5335,
+                "国职院高职教育": 7897,
+                "国职院成人函授": 8,
+                "国职院中专(包括五年制中段)": 814,
+                "国职院五年制(高段)": 1196
+            }
+        };
+
+        var downloadJson = {
+            "国家一村一名大学生专科": 8115,
+            "国家课程开放专科": 45,
+            "国家助力计划专科": 13,
+            "国家开放专科": 18403,
+            "国家开放本科(专科起点)": 10362
+
+        };
+
+        var themeJson = {
+            "云开大校地合作项目专科": 6885,
+            "云开大远程开放本科": 265,
+            "云开大专本衔接本科": 1692,
+            "云开大远程开放专科": 4344,
+            "云开大一村一项目专科": 4200,
+            "云开大滇西青年创业计划专科": 400,
+            "云开大成人本科": 558,
+            "云开大成人专科": 5335,
+            "云开大中高衔接专科": 94993,
+            "国职院高职教育": 7897,
+            "国职院成人函授": 8,
+            "国职院中专(包括五年制中段)": 814,
+            "国职院五年制(高段)": 1196
+
+        };
+
+
+        // var canvas = document.createElement('canvas');
+
+        option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            tooltip: {},
+            title: [{
+                text: '各类教育在校人数',
+                subtext: '总计 ' + builderJson.all,
+                x: '25%',
+                textAlign: 'center'
+            }, {
+                text: '国家开放大学学生',
+                subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
+                    return all + downloadJson[key];
+                }, 0),
+                x: '75%',
+                textAlign: 'center'
+            }, {
+                text: '云南开放大学学生',
+                subtext: '总计 ' + Object.keys(themeJson).reduce(function (all, key) {
+                    return all + themeJson[key];
+                }, 0),
+                x: '75%',
+                y: '50%',
+                textAlign: 'center'
+            }],
+            grid: [{
+                top: 50,
+                width: '50%',
+                bottom: '45%',
+                left: 10,
+                containLabel: true
+            }, {
+                top: '55%',
+                width: '50%',
+                bottom: 0,
+                left: 10,
+                containLabel: true
+            }],
+            xAxis: [{
+                type: 'value',
+                max: builderJson.all,
+                splitLine: {
+                    show: false
+                }
+            }, {
+                type: 'value',
+                max: builderJson.all,
+                gridIndex: 1,
+                splitLine: {
+                    show: false
+                }
+            }],
+            yAxis: [{
+                type: 'category',
+                data: Object.keys(builderJson.charts),
+                axisLabel: {
+                    interval: 0,
+                    rotate: 30
+                },
+                splitLine: {
+                    show: false
+                }
+            }, {
+                gridIndex: 1,
+                type: 'category',
+                data: Object.keys(builderJson.components),
+                axisLabel: {
+                    interval: 0,
+                    rotate: 30
+                },
+                splitLine: {
+                    show: false
+                }
+            }],
+            series: [{
+                type: 'bar',
+                stack: 'chart',
+                z: 3,
+                label: {
+                    normal: {
+                        position: 'right',
+                        show: true
+                    }
+                },
+                data: Object.keys(builderJson.charts).map(function (key) {
+                    return builderJson.charts[key];
+                })
+            }, {
+                type: 'bar',
+                stack: 'chart',
+                silent: true,
+                itemStyle: {
+                    normal: {
+                        color: '#eee'
+                    }
+                },
+                data: Object.keys(builderJson.charts).map(function (key) {
+                    return builderJson.all - builderJson.charts[key];
+                })
+            }, {
+                type: 'bar',
+                stack: 'component',
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                z: 3,
+                label: {
+                    normal: {
+                        position: 'right',
+                        show: true
+                    }
+                },
+                data: Object.keys(builderJson.components).map(function (key) {
+                    return builderJson.components[key];
+                })
+            }, {
+                type: 'bar',
+                stack: 'component',
+                silent: true,
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                itemStyle: {
+                    normal: {
+                        color: '#eee'
+                    }
+                },
+                data: Object.keys(builderJson.components).map(function (key) {
+                    return builderJson.all - builderJson.components[key];
+                })
+            }, {
+                type: 'pie',
+                radius: [0, '30%'],
+                center: ['75%', '25%'],
+                roseType: 'area',
+                data: Object.keys(downloadJson).map(function (key) {
+                    return {
+                        name: key.replace('.js', ''),
+                        value: downloadJson[key]
+                    }
+                })
+            }, {
+                type: 'pie',
+                radius: [0, '30%'],
+                center: ['75%', '75%'],
+                roseType: 'area',
+                data: Object.keys(themeJson).map(function (key) {
+                    return {
+                        name: key.replace('.js', ''),
+                        value: themeJson[key]
+                    }
+                })
+            }]
+        };
+
+        if (option && typeof option === "object") {
+            enroll_Dist_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            enroll_Dist_Chart.resize();
+        });
+
+    </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/dist/js/sb-admin-2.js"></script>
+    <script src="/js/toggled.js"></script>
+
+</div>
+
+</body>
+
+</html>

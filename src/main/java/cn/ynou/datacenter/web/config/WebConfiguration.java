@@ -25,7 +25,8 @@ public class WebConfiguration {
     public FilterRegistrationBean singleSignOutFilter() {
         FilterRegistrationBean bean = new FilterRegistrationBean();
         bean.setFilter(new SingleSignOutFilter());
-        bean.addInitParameter("casServerUrlPrefix", loginUrl);
+//        bean.addInitParameter("casServerUrlPrefix", loginUrl);
+        bean.addInitParameter("casServerUrlPrefix", urlPrefix);
         return bean;
     }
 

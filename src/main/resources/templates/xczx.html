@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>村(社区)干部双提升行动计划</title>
+
+    <link rel="icon" class="fa fa-windows fa-fw" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/dist/css/sbadmin2-sidebar-toggle.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ECharts -->
+    <script src="/Echart3/dist/echarts.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+
+<div id="wrapper" class="toggled">
+
+    <!-- Navigation -->
+    <div th:replace="common :: navbar"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">村(社区)干部双提升行动计划</h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-twitter fa-fw"></i><span>村(社区)干部双提升行动计划教学点分布</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="xczx_xyfb_2018_0831" style="height: 600px;width: auto"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-twitter fa-fw"></i><span>2018年秋全省招收新生分布情况</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="xczx_xyfb_zs_2018_0831" style="height: 600px;width: auto"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>2018年村(社区)干部双提升行动计划各教学点招生情况</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="village_cadres_student_dist" style="height: 1600px;width: auto"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>2018年村(社区)干部双提升行动计划各地区招生情况</span>
+                    </div>
+                    <div class="panel-body">
+                        <!--<div id="xczx_area_2018_0831_bar" style="height: 400px;width: auto"></div>-->
+                        <!--<hr/>-->
+                        <div id="xczx_area_2018_0831_pie" style="height: 400px;width: auto"></div>
+                    </div>
+                    <!--<div class="col-lg-6 panel-body">-->
+                    <!--<div id="xczx_area_2018_0831_pie" style="height: 400px;width: auto"></div>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <i class="fa fa-delicious fa-fw"></i><span>2018年村(社区)干部双提升行动计划学员构成比例</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!--政治面貌 xygc_2018_zzmm_pie-->
+                                <div id="xygc_2018_zzmm_pie" style="height: 293px;width: auto"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <!--文化程度 xygc_2018_whcd_pie-->
+                                <div id="xygc_2018_whcd_pie" style="height: 293px;width: auto"></div>
+                            </div>
+                        </div>
+
+                        <hr/>
+                        <div class="row">
+                            <!--年龄分布-->
+                            <!--<div class="col-lg-8">-->
+                            <div id="student_old_dist" style="height: 400px;width: auto"></div>
+                            <!--</div>-->
+                            <!--&lt;!&ndash;性别比例&ndash;&gt;-->
+                            <!--<div class="col-lg-4">-->
+                            <!--<div id="xygc_2018_xb_pie" style="height: 400px;width: auto"></div>-->
+                            <!--</div>-->
+                        </div>
+                        <hr/>
+                        <div class="row">
+                            <!--报读专业 xygc_2018_bdzy_pie-->
+                            <div id="xygc_2018_bdzy_pie" style="height: 333px;width: auto"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--先注释掉-->
+        <!--<div class="row">-->
+        <!--<div class="col-lg-12">-->
+        <!--<div class="panel panel-primary">-->
+        <!--<div class="panel-heading">-->
+        <!--<i class="fa fa-image fa-fw"></i><span> 村(社区)干部双提升行动计划办学点位置图</span>-->
+        <!--</div>-->
+        <!--<div class="panel-body" style="min-width:400px;height:800px">-->
+        <!--<iframe th:src="${mapUrlId3}" name="mainFrame" id="mainFrame" frameborder="0"-->
+        <!--style="width:100%;height: 100%;border:1px solid #096DA6" scrolling="auto">-->
+        <!--</iframe>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.col-lg-12 &ndash;&gt;-->
+        <!--</div>-->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!--</footer>-->
+    <div th:replace="common :: footer"></div>
+
+
+    <!-- jQuery -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!--Echart3 data-->
+    <script type="text/javascript" src="/Echart3/map/js/province/yunnan.js"></script>
+    <!--<script type="text/javascript" src="/Echart3/map/js/world.js"></script>-->
+
+    <!--基础数据 和公用方法-->
+    <script>
+        var geoCoordMap = {
+            '昆明开放学院': [102.745654, 25.053546],
+            '东川区委党校': [103.195613, 26.097233],
+            '晋宁区委党校': [102.596215, 24.669574],
+            '宜良县委党校': [103.152672, 24.915884],
+            '嵩明县委党校': [103.041361, 25.348595],
+            '石林县委党校': [103.307419, 24.786808],
+            '禄劝县委党校': [102.467412, 25.562857],
+            '寻甸县委党校': [103.266823, 25.57001],
+            '绥江县教师进修学校教学点': [103.993618, 28.603262],
+            '盐津县教师进修学校教学点': [104.250599, 28.06651],
+            '彝良县教师进修学校教学点': [104.059886, 27.633543],
+            '镇雄县教师进修学校教学点': [104.897344, 27.436375],
+            '昭阳区教师进修学校教学点': [103.718373, 27.348765],
+            '巧家县委党校': [102.935951, 26.922696],
+            '大关县委党校': [103.900711, 27.754493],
+            '曲靖开放学院': [103.799456, 25.485485],
+            '宣威开放学院': [104.104378, 26.222501],
+            '师宗县职业技术学校教学点': [103.984191, 24.807169],
+            '沾益县职业教育培训中心': [103.832013, 25.614455],
+            '会泽县委党校': [103.304531, 26.409219],
+            '楚雄开放学院': [101.558764, 25.039599],
+            '南华县职业高级中学教学点': [101.272634, 25.21718],
+            '武定县委党校教学点': [102.410953, 25.536166],
+            '永仁县委党校教学点': [101.67927, 26.070211],
+            '大姚县委党校': [101.343767, 25.734082],
+            '元谋县委党校': [101.880935, 25.710658],
+            '双柏县委党校': [101.641709, 24.698751],
+            '牟定县委党校': [101.553381, 25.319187],
+            '姚安县委党校': [101.249882, 25.509635],
+            '红塔开放学院': [102.569827, 24.34995],
+            '新平县职业高级中学教学点': [101.997193, 24.079978],
+            '易门职中': [102.157779, 24.672268],
+            '红河县教师进修学校教学点': [102.430632, 23.374852],
+            '金平学习中心': [103.233704, 22.78753],
+            '建水县农业广播电视学校': [102.822629, 23.621685],
+            '屏边县委党校': [103.694013, 22.990035],
+            '泸西职教中心教学点（党校）': [103.775828, 24.52331],
+            '元阳教学点（进校、职校、党校）': [102.842758, 23.228488],
+            '蒙自教师进修学校': [103.373987, 23.36817],
+            '丘北县教师进修学校': [104.195767, 24.046517],
+            '砚山县委党校': [104.351633, 23.613738],
+            '西畴县委党校': [104.691185, 23.453],
+            '马关县委党校': [104.39653, 23.016931],
+            '富宁农广校': [105.638716, 23.628632],
+            '墨江县委党校': [101.698413, 23.439915],
+            '普洱开放学院': [100.965908, 22.767237],
+            '镇沅县委党校': [101.111808, 24.014169],
+            '宁洱县教师进修学校': [101.059792, 23.075123],
+            '澜沧县委党校': [99.942885, 22.574847],
+            '景谷县教师进修学校': [100.709255, 23.509118],
+            '景东县教师进修学校': [100.86101, 24.441878],
+            '江城县委党校': [101.876328, 22.586098],
+            '西双版纳开放学院': [100.802184, 22.015841],
+            '南涧县职业高级中学': [100.522245, 25.045527],
+            '祥云开放学院': [100.576247, 25.49052],
+            '巍山县职业高级中学': [100.308153, 25.232595],
+            '大理漾濞职业高级中学': [99.968813, 25.685477],
+            '宾川县职业高级中学': [100.598467, 25.889247],
+            '云龙县民族职业高级中学': [99.378228, 25.893877],
+            '永平县职业高级中学教学点': [99.524611, 25.465639],
+            '弥渡县委党校': [100.485834, 25.349535],
+            '剑川县委党校': [99.911031, 26.544095],
+            '保山开放学院': [99.163416, 25.11334],
+            '昌宁县职教中心': [99.608912, 24.832273],
+            '腾冲开放学院': [98.505928, 25.03255],
+            '龙陵县委党校': [98.700662, 24.592664],
+            '陇川学习中心': [97.805258, 24.185743],
+            '宁蒗学习中心': [100.863739, 27.283116],
+            '怒江开放学院': [98.861826, 25.859004],
+            '镇康县职教中心': [98.831078, 23.767522],
+            '永德县职教中心': [99.260782, 24.037802],
+            '耿马县职教中心': [99.408386, 23.543422],
+            '凤庆县职教中心': [99.95055, 24.580058],
+            '沧源县职业高级中学': [99.253153, 23.154297],
+            '临翔区职业教育中心': [100.088772, 23.901461]
+        };
+
+        var geoValue = [
+            {name: "昆明开放学院", value: 295},
+            {name: "东川区委党校", value: 78},
+            {name: "晋宁区委党校", value: 40},
+            {name: "宜良县委党校", value: 39},
+            {name: "嵩明县委党校", value: 39},
+            {name: "石林县委党校", value: 52},
+            {name: "禄劝县委党校", value: 60},
+            {name: "寻甸县委党校", value: 59},
+            {name: "绥江县教师进修学校教学点", value: 40},
+            {name: "盐津县教师进修学校教学点", value: 90},
+            {name: "彝良县教师进修学校教学点", value: 80},
+            {name: "镇雄县教师进修学校教学点", value: 118},
+            {name: "昭阳区教师进修学校教学点", value: 129},
+            {name: "巧家县委党校", value: 73},
+            {name: "大关县委党校", value: 58},
+            {name: "曲靖开放学院", value: 100},
+            {name: "宣威开放学院", value: 120},
+            {name: "师宗县职业技术学校教学点", value: 59},
+            {name: "沾益县职业教育培训中心", value: 60},
+            {name: "会泽县委党校", value: 60},
+            {name: "楚雄开放学院", value: 100},
+            {name: "南华县职业高级中学教学点", value: 80},
+            {name: "武定县委党校教学点", value: 27},
+            {name: "永仁县委党校教学点", value: 50},
+            {name: "大姚县委党校", value: 32},
+            {name: "元谋县委党校", value: 62},
+            {name: "双柏县委党校", value: 30},
+            {name: "牟定县委党校", value: 40},
+            {name: "姚安县委党校", value: 40},
+            {name: "红塔开放学院", value: 69},
+            {name: "新平县职业高级中学教学点", value: 70},
+            {name: "易门职中", value: 39},
+            {name: "红河县教师进修学校教学点", value: 80},
+            {name: "金平学习中心", value: 80},
+            {name: "建水县农业广播电视学校", value: 50},
+            {name: "屏边县委党校", value: 100},
+            {name: "泸西职教中心教学点（党校）", value: 70},
+            {name: "元阳教学点（进校、职校、党校）", value: 150},
+            {name: "蒙自教师进修学校", value: 79},
+            {name: "丘北县教师进修学校", value: 120},
+            {name: "砚山县委党校", value: 127},
+            {name: "西畴县委党校", value: 50},
+            {name: "马关县委党校", value: 69},
+            {name: "富宁农广校", value: 80},
+            {name: "墨江县委党校", value: 40},
+            {name: "普洱开放学院", value: 60},
+            {name: "镇沅县委党校", value: 30},
+            {name: "宁洱县教师进修学校", value: 30},
+            {name: "澜沧县委党校", value: 70},
+            {name: "景谷县教师进修学校", value: 40},
+            {name: "景东县教师进修学校", value: 80},
+            {name: "江城县委党校", value: 60},
+            {name: "西双版纳开放学院", value: 100},
+            {name: "南涧县职业高级中学", value: 59},
+            {name: "祥云开放学院", value: 90},
+            {name: "巍山县职业高级中学", value: 58},
+            {name: "大理漾濞职业高级中学", value: 60},
+            {name: "宾川县职业高级中学", value: 60},
+            {name: "云龙县民族职业高级中学", value: 59},
+            {name: "永平县职业高级中学教学点", value: 59},
+            {name: "弥渡县委党校", value: 30},
+            {name: "剑川县委党校", value: 30},
+            {name: "保山开放学院", value: 110},
+            {name: "昌宁县职教中心", value: 60},
+            {name: "腾冲开放学院", value: 76},
+            {name: "龙陵县委党校", value: 50},
+            {name: "陇川学习中心", value: 50},
+            {name: "宁蒗学习中心", value: 32},
+            {name: "怒江开放学院", value: 58},
+            {name: "镇康县职教中心", value: 103},
+            {name: "永德县职教中心", value: 50},
+            {name: "耿马县职教中心", value: 30},
+            {name: "凤庆县职教中心", value: 104},
+            {name: "沧源县职业高级中学", value: 30},
+            {name: "临翔区职业教育中心", value: 40}
+        ];
+
+        var areaValue = [
+            {name: '昆明市', value: 662},
+            {name: '曲靖市', value: 399},
+            {name: '玉溪市', value: 178},
+            {name: '保山市', value: 246},
+            {name: '昭通市', value: 588},
+            {name: '丽江市', value: 32},
+            {name: '普洱市', value: 410},
+            {name: '临沧市', value: 357},
+            {name: '楚雄彝族自治州', value: 461},
+            {name: '红河哈尼族彝族自治州', value: 609},
+            {name: '文山壮族苗族自治州', value: 446},
+            {name: '西双版纳傣族自治州', value: 100},
+            {name: '大理白族自治州', value: 505},
+            {name: '德宏傣族景颇族自治州', value: 100},
+            {name: '怒江傈僳族自治州', value: 58},
+            {name: '迪庆藏族自治州', value: 0}
+        ];
+
+        //政治面貌
+        var zzmmValue = [
+            {name: '中共党员', value: 3651},
+            {name: '群众', value: 929},
+            {name: '共青团员', value: 339},
+            {name: '中共预备党员', value: 240},
+            {name: '无党派民主人士', value: 2}
+        ];
+
+        //文化程度
+        var whcdValue = [
+            {name: '专科', value: 1916},
+            {name: '初中', value: 1106},
+            {name: '高中', value: 883},
+            {name: '中专', value: 838},
+            {name: '职高', value: 357},
+            {name: '技校', value: 47},
+            {name: '本科', value: 14}
+        ];
+
+        //报读层次
+        var bdccValue = [
+            {name: '专科', value: 3236},
+            {name: '专升本', value: 1925}
+        ];
+
+        //报读专业
+        var bdzyValue = [
+            {name: '★行政管理（农村行政管理方向）', value: 1434},
+            {name: '农林经济管理', value: 1185},
+            {name: '法学', value: 740},
+            {name: '★行政管理（农村行政管理）（初）', value: 584},
+            {name: '★农业经济管理', value: 549},
+            {name: '★农业经济管理（初）', value: 428},
+            {name: '★法律事务（基层法制建设方向）', value: 144},
+            {name: '★法律事务（基层法制建设方向）（初）', value: 97}
+        ];
+
+        //性别数
+        var xbValue = [
+            {name: '男', value: 3536},
+            {name: '女', value: 1625}
+        ];
+
+        //年龄结构
+        var oldStuctValue = [
+            {name: '17', value: 2},
+            {name: '18', value: 8},
+            {name: '19', value: 24},
+            {name: '20', value: 61},
+            {name: '21', value: 75},
+            {name: '22', value: 95},
+            {name: '23', value: 140},
+            {name: '24', value: 133},
+            {name: '25', value: 168},
+            {name: '26', value: 189},
+            {name: '27', value: 196},
+            {name: '28', value: 256},
+            {name: '29', value: 264},
+            {name: '30', value: 255},
+            {name: '31', value: 329},
+            {name: '32', value: 275},
+            {name: '33', value: 265},
+            {name: '34', value: 278},
+            {name: '35', value: 264},
+            {name: '36', value: 272},
+            {name: '37', value: 218},
+            {name: '38', value: 189},
+            {name: '39', value: 236},
+            {name: '40', value: 254},
+            {name: '41', value: 202},
+            {name: '42', value: 184},
+            {name: '43', value: 160},
+            {name: '44', value: 130},
+            {name: '45', value: 39}
+        ];
+
+        var dataTime = '数据统计时间:2018年9月3日';
+
+        var getNameOrValue = function (data, flag) {
+            var res = [];
+            if (flag == "name") {
+                for (var i = 0; i < data.length; i++) {
+                    res.push(data[i].name);
+                }
+            } else {
+                for (var i = 0; i < data.length; i++) {
+                    res.push(data[i].value);
+                }
+            }
+            res.reverse();
+            return res;
+        }
+
+        var waterMarkText = '云南开放大学';
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        canvas.width = canvas.height = 100;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.globalAlpha = 0.08;
+        ctx.font = '20px Microsoft Yahei';
+        ctx.translate(50, 50);
+        ctx.rotate(-Math.PI / 4);
+        ctx.fillText(waterMarkText, 0, 0);
+
+        var getOption = function (titleText, subTxt, parmData, minRadius, maxRadius, legendY) {
+            var option = {
+                backgroundColor: {
+                    type: 'pattern',
+                    image: canvas,
+                    repeat: 'repeat'
+                },
+                title: {
+                    text: titleText,
+                    subtext: subTxt,
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}: {c}  ({d}%)"
+                },
+                legend: {
+                    orient: 'horizontal',
+                    x: 'left',
+                    y: legendY,
+                    // y: 'bottom',
+                    data: getNameOrValue(parmData, 'name').reverse()
+                },
+                series: [
+                    {
+                        name: '',
+                        type: 'pie',
+                        radius: [minRadius, maxRadius],
+                        label: {
+                            normal: {
+                                formatter: '{b}:{c} ({d}%)',
+                                // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                                backgroundColor: '#eee',
+                                borderColor: '#aaa',
+                                borderWidth: 1,
+                                borderRadius: 4,
+                                // shadowBlur:3,
+                                // shadowOffsetX: 2,
+                                // shadowOffsetY: 2,
+                                // shadowColor: '#999',
+                                // padding: [0, 7],
+                                rich: {
+                                    a: {
+                                        color: '#999',
+                                        lineHeight: 22,
+                                        align: 'center'
+                                    },
+                                    // abg: {
+                                    //     backgroundColor: '#333',
+                                    //     width: '100%',
+                                    //     align: 'right',
+                                    //     height: 22,
+                                    //     borderRadius: [4, 4, 0, 0]
+                                    // },
+                                    hr: {
+                                        borderColor: '#aaa',
+                                        width: '100%',
+                                        borderWidth: 0.5,
+                                        height: 0
+                                    },
+                                    b: {
+                                        fontSize: 16,
+                                        lineHeight: 33
+                                    },
+                                    per: {
+                                        color: '#eee',
+                                        backgroundColor: '#334455',
+                                        padding: [2, 4],
+                                        borderRadius: 2
+                                    }
+                                }
+                            }
+                        },
+                        data: parmData
+                    }
+                ]
+            };
+            return option;
+        }
+
+    </script>
+
+    <!--  xczx_xyfb_2018_0831 乡村振兴项目教学点分布  75 个点....完成-->
+    <script type="text/javascript">
+        var convertData = function (data) {
+            var res = [];
+            for (var i = 0; i < data.length; i++) {
+                var geoCoord = geoCoordMap[data[i].name];
+                if (geoCoord) {
+                    res.push({
+                        name: data[i].name,
+                        value: geoCoord.concat(data[i].value)
+                    });
+                }
+            }
+            return res;
+        };
+        var xczx_xyfb_2018_0831_Chart = echarts.init(document.getElementById('xczx_xyfb_2018_0831'));
+        var option = {
+            backgroundColor: '#999999',
+            // backgroundColor: '#404a59',
+            title: {
+                text: '村(社区)干部双提升行动计划教学点分布',
+                // subtext: dataTime,
+                left: 'center',
+                textStyle: {
+                    color: '#111111'
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) {
+                    return params.name + ':' + params.value[2];
+                }
+            },
+            legend: {
+                orient: 'vertical',
+                y: 'bottom',
+                x: 'right',
+                data: ['村(社区)干部双提升行动计划教学点分布'],
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            geo: {
+                map: '云南',
+                zoom: 1.2,
+                roam: true,
+                label: {
+                    emphasis: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        areaColor: '#323c48',
+                        borderColor: '#31'
+                    },
+                    emphasis: {
+                        areaColor: '#2a333d'
+                    }
+                }
+            },
+
+            series: [{
+                name: '村(社区)干部双提升行动计划教学点分布',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+
+                data: convertData(geoValue),
+                symbolSize: function (val) {
+                    if (val[2] > 200) {
+                        return val[2] / 15;
+                    }
+                    else if (val[2] > 20 && val[2] < 200) {
+                        return val[2] / 10;
+                    }
+                    else {
+                        return 10;
+                    }
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    normal: {
+                        formatter: '',
+                        // formatter: '{b}',
+                        position: 'left',
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#f4e925',
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                zlevel: 1
+            }]
+        };
+        if (option && typeof option === "object") {
+            xczx_xyfb_2018_0831_Chart.setOption(option, true);
+        }
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            xczx_xyfb_2018_0831_Chart.resize();
+        });
+    </script>
+
+    <!--  xczx_xyfb_zs_2018_0831 2018年秋全省招收新生分布情况  按照州市....完成-->
+    <script type="text/javascript">
+        var xczx_xyfb_zs_2018_0831_Chart = echarts.init(document.getElementById('xczx_xyfb_zs_2018_0831'));
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: {
+                text: '2018年秋全省招收新生分布情况',
+                subtext: dataTime,
+                left: 'center',
+                textStyle: {
+                    color: '#333333'
+                }
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['2018年']
+            },
+            visualMap: {
+                min: 0,
+                max: 700,
+                left: 'left',
+                top: 'bottom',
+                text: ['高', '低'],           // 文本，默认为数值文本
+                calculable: true,
+                inRange: {
+                    color: ['lightskyblue', 'yellow', 'orangered']
+                }
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+
+            series: [{
+                name: '2018年',
+                type: 'map',
+                map: '云南',
+                zoom: 1.2,
+                roam: true,
+                label: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data: areaValue
+            }]
+        };
+        if (option && typeof option === "object") {
+            xczx_xyfb_zs_2018_0831_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            xczx_xyfb_zs_2018_0831_Chart.resize();
+        });
+
+    </script>
+
+    <!-- village_cadres_student_dist 2018年乡村振兴项目各教学点招生情况-->
+    <script type="text/javascript">
+        var village_cadres_student_dist_Chart = echarts.init(document.getElementById('village_cadres_student_dist'));
+        var data2018a = getNameOrValue(geoValue, "data");
+        option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: {
+                text: '2018年村(社区)干部双提升行动计划各教学点招生情况',
+                subtext: dataTime,
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer:
+                    {
+                        type: 'shadow'
+                    }
+            },
+            toolbox: {
+                show: true,
+                orient:
+                    'vertical',
+                left:
+                    'right',
+                top:
+                    'center',
+                // feature:
+                //     {
+                //         saveAsImage: {}
+                //     }
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            }
+            ,
+            legend: {
+                data: ['2018年秋'],
+                position:
+                    'right'
+            }
+            ,
+            grid: {
+                left: '3%',
+                right:
+                    '4%',
+                bottom:
+                    '3%',
+                containLabel:
+                    true
+            }
+            ,
+            xAxis: {
+                type: 'value',
+                boundaryGap:
+                    [0, 0.01]
+            }
+            ,
+            yAxis: {
+                type: 'category',
+                data:
+                    getNameOrValue(geoValue, "name")
+            }
+            ,
+            series: [
+                {
+                    name: '',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'right',
+                            formatter: function (params) {
+                                return params.value
+                                // return params.value + data2015a[params.dataIndex] + data2016s[params.dataIndex]
+                            },
+                            color: 'rgb(164,205,238)'
+                        }
+                    },
+                    // itemStyle: {
+                    //     //通常情况下：
+                    //     normal: {
+                    //         //每个柱子的颜色即为colorList数组里的每一项，如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                    //         // color: function (params) {
+                    //         //     var colorList = ['rgb(164,205,238)', 'rgb(42,170,227)', 'rgb(25,46,94)', 'rgb(195,229,235)'];
+                    //         //     return colorList[3];
+                    //         // }
+                    //         //color:'#36648B'
+                    //     }
+                    // },
+                    data: data2018a
+                }
+            ]
+        }
+        ;
+        if (option && typeof option === "object") {
+            village_cadres_student_dist_Chart.setOption(option, true);
+        }
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            village_cadres_student_dist_Chart.resize();
+        });
+    </script>
+
+    <!-- xczx_area_2018_0831_bar 2018年秋各地区招生情况-->
+    <!--<script type="text/javascript">-->
+    <!--var xczx_area_2018_0831_bar_Chart = echarts.init(document.getElementById('xczx_area_2018_0831_bar'));-->
+    <!--var data2018b = getNameOrValue(areaValue, "data");-->
+    <!--option = {-->
+    <!--backgroundColor: {-->
+    <!--type: 'pattern',-->
+    <!--image: canvas,-->
+    <!--repeat: 'repeat'-->
+    <!--},-->
+    <!--title: {-->
+    <!--text: '2018年秋各地区招生情况',-->
+    <!--subtext: dataTime,-->
+    <!--left: 'center'-->
+    <!--},-->
+    <!--tooltip: {-->
+    <!--trigger: 'axis',-->
+    <!--axisPointer:-->
+    <!--{-->
+    <!--type: 'shadow'-->
+    <!--}-->
+    <!--}-->
+    <!--,-->
+    <!--toolbox: {-->
+    <!--show: true,-->
+    <!--orient:-->
+    <!--'vertical',-->
+    <!--left:-->
+    <!--'right',-->
+    <!--top:-->
+    <!--'center',-->
+    <!--feature:-->
+    <!--{-->
+    <!--saveAsImage: {}-->
+    <!--}-->
+    <!--}-->
+    <!--,-->
+    <!--legend: {-->
+    <!--data: ['2018年秋'],-->
+    <!--position:-->
+    <!--'right'-->
+    <!--}-->
+    <!--,-->
+    <!--grid: {-->
+    <!--left: '3%',-->
+    <!--right:-->
+    <!--'4%',-->
+    <!--bottom:-->
+    <!--'3%',-->
+    <!--containLabel:-->
+    <!--true-->
+    <!--}-->
+    <!--,-->
+    <!--xAxis: {-->
+    <!--type: 'value',-->
+    <!--boundaryGap:-->
+    <!--[0, 0.01]-->
+    <!--}-->
+    <!--,-->
+    <!--yAxis: {-->
+    <!--type: 'category',-->
+    <!--axisLabel: {-->
+    <!--interval: 0,-->
+    <!--rotate: 0 //y -> /-->
+    <!--},-->
+    <!--data:-->
+    <!--getNameOrValue(areaValue, "name")-->
+    <!--}-->
+    <!--,-->
+    <!--series: [-->
+    <!--{-->
+    <!--name: '',-->
+    <!--type: 'bar',-->
+    <!--stack: '总量',-->
+    <!--label: {-->
+    <!--normal: {-->
+    <!--show: true,-->
+    <!--position: 'right',-->
+    <!--formatter: function (params) {-->
+    <!--return params.value-->
+    <!--// return params.value + data2015a[params.dataIndex] + data2016s[params.dataIndex]-->
+    <!--},-->
+    <!--color: 'rgb(164,205,238)'-->
+    <!--}-->
+    <!--},-->
+    <!--itemStyle: {-->
+    <!--//通常情况下：-->
+    <!--normal: {-->
+    <!--//每个柱子的颜色即为colorList数组里的每一项，如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组-->
+    <!--// color: function (params) {-->
+    <!--//     var colorList = ['rgb(164,205,238)', 'rgb(42,170,227)', 'rgb(25,46,94)', 'rgb(195,229,235)'];-->
+    <!--//     return colorList[3];-->
+    <!--// }-->
+    <!--color: '#36648B'-->
+    <!--}-->
+    <!--},-->
+    <!--data: data2018b-->
+    <!--}-->
+    <!--]-->
+    <!--}-->
+    <!--if (option && typeof option === "object") {-->
+    <!--xczx_area_2018_0831_bar_Chart.setOption(option, true);-->
+    <!--}-->
+    <!--//浏览器大小改变时重置大小-->
+    <!--window.addEventListener("resize", function () {-->
+    <!--xczx_area_2018_0831_bar_Chart.resize();-->
+    <!--});-->
+    <!--</script>-->
+
+    <!--xczx_area_2018_0831_pie 2018年秋各地区招生比-->
+    <script type="text/javascript">
+        var xczx_area_2018_0831_pie_Chart = echarts.init(document.getElementById("xczx_area_2018_0831_pie"));
+        //(titleText, subTxt, parmData, minRadius, maxRadius, legendY)
+        var areaValueOption = getOption('2018年秋各地区招生情况比例', dataTime, areaValue, '0%', '50%', 'bottom');
+        if (areaValueOption && typeof areaValueOption === "object") {
+            xczx_area_2018_0831_pie_Chart.setOption(areaValueOption, true);
+        }
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            xczx_area_2018_0831_pie_Chart.resize();
+        });
+    </script>
+
+    <!--政治面貌 xygc_2018_zzmm_pie-->
+    <script type="text/javascript">
+        var xygc_2018_zzmm_pie_Chart = echarts.init(document.getElementById("xygc_2018_zzmm_pie"));
+        //(titleText, subTxt, parmData, minRadius, maxRadius, legendY)
+        var zzmmOption = getOption('2018学员政治面貌比例', dataTime, zzmmValue, '0%', '30%', 'bottom');
+        if (zzmmOption && typeof zzmmOption === "object") {
+            xygc_2018_zzmm_pie_Chart.setOption(zzmmOption, true);
+        }
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            xygc_2018_zzmm_pie_Chart.resize();
+        });
+    </script>
+    <!--文化程度 xygc_2018_whcd_pie-->
+    <script type="text/javascript">
+        var xygc_2018_whcd_pie_Chart = echarts.init(document.getElementById("xygc_2018_whcd_pie"));
+        var whcdOption = getOption('2018年学员文化程度比例', dataTime, whcdValue, '0%', '30%', 'bottom');
+        if (whcdOption && typeof whcdOption === "object") {
+            xygc_2018_whcd_pie_Chart.setOption(whcdOption, true);
+        }
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            xygc_2018_whcd_pie_Chart.resize();
+        });
+    </script>
+    <!--&lt;!&ndash;报读层次 xygc_2018_bdcc_pie&ndash;&gt;-->
+    <!--<script type="text/javascript">-->
+    <!--var xygc_2018_bdcc_pie_Chart = echarts.init(document.getElementById("xygc_2018_bdcc_pie"));-->
+    <!--var bdccOption = getOption('2018年乡村振兴学员报读层次比例', bdccValue, '40%', '');-->
+    <!--if (bdccOption && typeof bdccOption === "object") {-->
+    <!--xygc_2018_bdcc_pie_Chart.setOption(bdccOption, true);-->
+    <!--}-->
+    <!--//浏览器大小改变时重置大小-->
+    <!--window.addEventListener("resize", function () {-->
+    <!--xygc_2018_bdcc_pie_Chart.resize();-->
+    <!--});-->
+    <!--</script>-->
+    <!--报读专业 xygc_2018_bdzy_pie-->
+    <script type="text/javascript">
+        var xygc_2018_bdzy_pie_Chart = echarts.init(document.getElementById("xygc_2018_bdzy_pie"));
+        var bdzyOption = getOption('2018年学员报读专业比例', dataTime, bdzyValue, '0%', '40%', 'bottom');
+        if (bdzyOption && typeof bdzyOption === "object") {
+            xygc_2018_bdzy_pie_Chart.setOption(bdzyOption, true);
+        }
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            xygc_2018_bdzy_pie_Chart.resize();
+        });
+    </script>
+
+    <!--年龄结构分布-->
+    <script type="text/javascript">
+        var student_old_dist_Chart = echarts.init(document.getElementById('student_old_dist'));
+        var option = {
+            backgroundColor: {
+                type: 'pattern',
+                image: canvas,
+                repeat: 'repeat'
+            },
+            title: {
+                text: '2018年学员年龄结构分布',
+                subtext: dataTime,
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['2018年学员年龄结构分布'],
+                top: 'bottom'
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    data: getNameOrValue(oldStuctValue, 'name').reverse()
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '2018年学员年龄结构分布',
+                    type: 'bar',
+                    data: getNameOrValue(oldStuctValue, 'value').reverse(),
+                    itemStyle: {
+                        normal: {
+                            color: '#36648B',
+                            label: {
+                                show: true,
+                                position: 'top',
+                                formatter: '{c}'
+                            }
+                        }
+                    }
+                }
+            ]
+        };
+
+        if (option && typeof option === "object") {
+            student_old_dist_Chart.setOption(option, true);
+        }
+
+        //浏览器大小改变时重置大小
+        window.addEventListener("resize", function () {
+            student_old_dist_Chart.resize();
+        });
+    </script>
+    <!--性别分布 xygc_2018_bdzy_pie-->
+    <!--<script type="text/javascript">-->
+    <!--var xygc_2018_xb_pie_Chart = echarts.init(document.getElementById("xygc_2018_xb_pie"));-->
+    <!--var xbOption = getOption('2018年学员性别比例', dataTime, xbValue, '0%', '40%', 'bottom');-->
+    <!--if (xbOption && typeof xbOption === "object") {-->
+    <!--xygc_2018_xb_pie_Chart.setOption(xbOption, true);-->
+    <!--}-->
+    <!--//浏览器大小改变时重置大小-->
+    <!--window.addEventListener("resize", function () {-->
+    <!--xygc_2018_xb_pie_Chart.resize();-->
+    <!--});-->
+    <!--</script>-->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/dist/js/sb-admin-2.js"></script>
+    <script src="/js/toggled.js"></script>
+</div>
+
+</body>
+
+</html>

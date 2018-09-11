@@ -1,7 +1,7 @@
 var dom = document.getElementById("gdzc_data_qm");
 var myChart_gdzc_qc = echarts.init(dom);
 var app = {};
-option = null;
+var option = null;
 app.title = '固定资产分类结存(2018年7月1日)';
 
 option = {
@@ -81,7 +81,7 @@ option = {
             ]
         }
     ]
-};;
+};
 if (option && typeof option === "object") {
     myChart_gdzc_qc.setOption(option, true);
 }

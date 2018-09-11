@@ -6,7 +6,7 @@ var myChart_new = echarts.init(new_element);
 // 指定图表的配置项和数据
 option = {
     title: {
-        text: '2012-2018新注册学生数'
+        text: '2012-2017新注册学生数'
     },
     tooltip: {
         trigger: 'axis',
@@ -18,7 +18,7 @@ option = {
         }
     },
     legend: {
-        data: ['开放本科', '开放专科', '开放专升本', '高职']
+        data: ['开放本科', '开放专科', '开放专升本','国开', '高职']
     },
     toolbox: {
         feature: {
@@ -35,7 +35,7 @@ option = {
         {
             type: 'category',
             boundaryGap: false,
-            data: ['2012', '2013', '2014', '2015', '2016', '2017', '2018']
+            data: ['2012', '2013', '2014', '2015', '2016', '2017']
         }
     ],
     yAxis: [
@@ -54,7 +54,7 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [2, 1, 556, 628, 556, 475, 0]
+            data: [2, 1, 556, 628, 556, 475]
         },
         {
             name: '开放专科',
@@ -66,7 +66,7 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [28286, 20369, 19279, 25085, 39888, 39144, 5642]
+            data: [28286, 20369, 19279, 25085, 39888, 39144]
         },
         {
             name: '开放专升本',
@@ -78,7 +78,19 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [0, 0, 158, 57, 47, 374, 70]
+            data: [0, 0, 158, 57, 47, 374]
+        },
+        {
+            name: '国开',
+            type: 'line',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true
+                }
+            },
+            areaStyle: {normal: {}},
+            data: [11674,12035,9099,7582,6907,4666]
         },
         {
             name: '高职',
@@ -91,7 +103,7 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [2529, 2380, 2402, 2914, 2766, 3977, 0]
+            data: [2529, 2380, 2402, 2914, 2766, 3977]
         }
     ],
     color:['#337ab7', '#5cb85c','#f0ad4e','#d9534f']

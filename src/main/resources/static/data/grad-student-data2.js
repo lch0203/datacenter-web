@@ -1,12 +1,12 @@
 // // 基于准备好的dom，初始化echarts实例
-var element_zc = document.getElementById('zc-student-area-chart');
 
-var myChart_zc = echarts.init(element_zc);
+var grad_element = document.getElementById('grad-student-area-chart');
+var myChart_grad = echarts.init(grad_element);
 
 // 指定图表的配置项和数据
 option = {
     title: {
-        text: '2012-2018在册学生数'
+        text: '2012-2017毕业学生数'
     },
     tooltip: {
         trigger: 'axis',
@@ -18,7 +18,7 @@ option = {
         }
     },
     legend: {
-        data: ['开放本科', '开放专科', '开放专升本', '高职']
+        data: ['开放本科', '开放专科', '开放专升本', '国开', '高职']
     },
     toolbox: {
         feature: {
@@ -35,7 +35,7 @@ option = {
         {
             type: 'category',
             boundaryGap: false,
-            data: ['2012', '2013', '2014', '2015', '2016', '2017', '2018']
+            data: ['2012', '2013', '2014', '2015', '2016', '2017']
         }
     ],
     yAxis: [
@@ -54,7 +54,7 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [2, 3, 559, 1187, 1743, 2218, 2081]
+            data: [0, 0, 0, 0, 0, 0]
         },
         {
             name: '开放专科',
@@ -66,7 +66,7 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [28286, 48655, 67934, 90281, 123587, 148756, 144617]
+            data: [0, 0, 0, 2738, 6582, 13975]
         },
         {
             name: '开放专升本',
@@ -78,7 +78,19 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [0, 0, 158, 215, 262, 558, 607]
+            data: [0, 0, 0, 0, 0, 78]
+        },
+        {
+            name: '国开',
+            type: 'line',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true
+                }
+            },
+            areaStyle: {normal: {}},
+            data: [8516, 9805, 10075, 9059, 9558, 7954]
         },
         {
             name: '高职',
@@ -91,16 +103,16 @@ option = {
                 }
             },
             areaStyle: {normal: {}},
-            data: [7801, 7631, 7311, 7696, 8082, 9657, 6743]
+            data: [2323, 2550, 2722, 2529, 2380, 2402]
         }
     ],
-    color:['#337ab7', '#5cb85c','#f0ad4e','#d9534f']
+    color: ['#337ab7', '#5cb85c', '#f0ad4e', '#d9534f']
 };
 
 // 使用刚指定的配置项和数据显示图表。
-myChart_zc.setOption(option);
+myChart_grad.setOption(option);
 
 //浏览器大小改变时重置大小
 window.addEventListener("resize", function () {
-    myChart_zc.resize();
+    myChart_grad.resize();
 });
