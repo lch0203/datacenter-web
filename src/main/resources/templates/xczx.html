@@ -103,7 +103,8 @@
                     </div>
                     <div class="panel-body">
                         <!--民族分布 xygc_2018_bdzy_pie-->
-                        <div id="xygc_2018_mz_dist" style="height: 400px;width: auto"></div>
+                        <!--<div id="xygc_2018_mz_dist" style="height: 400px;width: auto"></div>-->
+                        <div id="student_mz_top5_dist" style="height: 333px;width: auto"></div>
                     </div>
                 </div>
             </div>
@@ -159,8 +160,9 @@
                         <hr/>
                         <div class="row">
                             <div class="col-lg-6">
-                                <!--//民族top5-->
-                                <div id="student_mz_top5_dist" style="height: 333px;width: auto"></div>
+                                <!--//年龄结构比例-->
+                                <!--<div id="student_mz_top5_dist" style="height: 333px;width: auto"></div>-->
+                                <div id="old_struct_dist" style="height: 333px;width: auto"></div>
                             </div>
                             <div class="col-lg-6">
                                 <!--性别比例-->
@@ -1325,6 +1327,19 @@
             //浏览器大小改变时重置大小
             window.addEventListener("resize", function () {
                 student_old_dist_Chart.resize();
+            });
+        </script>
+
+        <!--年龄结构比例 old_struct_dist-->
+        <script type="text/javascript">
+            var old_struct_dist_Chart = echarts.init(document.getElementById("old_struct_dist"));
+            var mzOption = getOption('2018年学员年龄结构比例', dataTime, oldPer5StuctValue, '0%', '50%', 'bottom');
+            if (mzOption && typeof mzOption === "object") {
+                old_struct_dist_Chart.setOption(mzOption, true);
+            }
+            //浏览器大小改变时重置大小
+            window.addEventListener("resize", function () {
+                old_struct_dist_Chart.resize();
             });
         </script>
 
